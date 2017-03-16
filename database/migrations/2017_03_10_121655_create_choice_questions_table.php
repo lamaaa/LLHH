@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStatusesTable extends Migration
+class CreateChoiceQuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,14 @@ class CreateStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('statuses', function (Blueprint $table) {
+        Schema::create('choice_questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('content');
-            $table->integer('user_id')->index();
-            $table->index(['created_at']);
+            $table->string('description');
+            $table->string('difficulty');
+            $table->string('topic');
+            $table->string('answer');
+            $table->string('source');
+            $table->boolean('is_old');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('statuses');
+        Schema::drop('choice_questions');
     }
 }

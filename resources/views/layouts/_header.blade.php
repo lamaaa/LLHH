@@ -1,8 +1,14 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
         <div class="col-md-offset-1 col-md-10">
-            <a href="/" id="logo">LLHH习题库管理系统</a>
+            <a href="/" id="logo">LLHH习题库</a>
             <nav>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="{{ url() }}">首页</a></li>
+                    <li><a href="#">题目</a></li>
+                    <li><a href="#">试卷</a></li>
+                    <li><a href="{{ route('help') }}">关于</a></li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
                         <li><a href="{{ route('users.index') }}">用户列表</a></li>

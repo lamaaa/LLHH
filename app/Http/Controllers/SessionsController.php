@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Mail;
 
 class SessionsController extends Controller
 {
+    /*
+     * 已登录用户不能访问登录页面
+     */
     public function __construct()
     {
         $this->middleware('guest', [
@@ -18,11 +21,17 @@ class SessionsController extends Controller
         ]);
     }
 
+    /*
+     * 返回登录页
+     */
     public function create()
     {
         return view('sessions.create');
     }
 
+    /*
+     * 1. 登录
+     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -50,6 +59,9 @@ class SessionsController extends Controller
         }
     }
 
+    /*
+     * 退出
+     */
     public function destroy()
     {
         Auth::logout();

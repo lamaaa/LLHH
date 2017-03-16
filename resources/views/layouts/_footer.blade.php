@@ -2,7 +2,6 @@
     <footer class="footer">
         <nav>
             <ul>
-                <li><a href="{{ route('about') }}">关于</a></li>
             </ul>
         </nav>
     </footer>

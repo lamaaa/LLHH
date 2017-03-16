@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Mail;
 
 class UsersController extends Controller
 {
+    /*
+     * 未登录时不能执行edit，update，destroy操作
+     * 已登录时不能执行create操作
+     */
     public function __construct()
     {
         $this->middleware('auth', [
@@ -23,12 +27,19 @@ class UsersController extends Controller
         ]);
     }
 
+    /*
+     * 加载30条用户数据
+     */
     public function index()
     {
         $users = User::paginate(30);
         return view('users.index', compact('users'));
     }
 
+    /*
+     * 返回编辑用户密码的页面
+     * 登录用户才能执行update
+     */
     public function edit($id)
     {
         $user = User::findOrFail($id);
@@ -36,21 +47,30 @@ class UsersController extends Controller
         return view('users.edit', compact('user'));
     }
 
+    /*
+     * 返回用户注册页面
+     */
     public function create()
     {
         return view('users.create');
     }
 
+    /*
+     * 返回用户个人中心
+     */
     public function show($id)
     {
         $user = User::findOrFail($id);
-        $statuses = $user->statuses()
-                        ->orderBy('created_at', 'desc')
-                        ->paginate(30);
 
-        return view('users.show', compact('user', 'statuses'));
+        return view('users.show', compact('user'));
     }
 
+    /*
+     * 1.验证用户输入的数据
+     * 2.创建用户，插入数据库
+     * 3.发送邮件给用户激活
+     * 4.返回个人用户中心
+     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -65,12 +85,14 @@ class UsersController extends Controller
             'password'  =>  bcrypt($request->password),
         ]);
 
-        //Auth::login($user);
         $this->sendEmailConfirmationTo($user);
         session()->flash('success', '欢迎，您将在这里开启一段新的旅程~,请先前往邮箱进行激活。');
         return redirect()->route('users.show', [$user]);
     }
 
+    /*
+     * 更新用户数据
+     */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
@@ -94,6 +116,9 @@ class UsersController extends Controller
         return redirect()->route('users.show', $id);
     }
 
+    /*
+     * 删除用户
+     */
     public function destroy($id)
     {
         $user = User::findOrFail($id);
@@ -103,6 +128,9 @@ class UsersController extends Controller
         return back();
     }
 
+    /*
+     * 发送邮件给注册用户进行激活
+     */
     protected function sendEmailConfirmationTo($user)
     {
         $view = 'emails.confirm';
@@ -117,6 +145,9 @@ class UsersController extends Controller
         });
     }
 
+    /*
+     * 用户激活
+     */
     public function confirmEmail($token)
     {
         $user = User::where('activation_token', $token)->firstOrFail();
