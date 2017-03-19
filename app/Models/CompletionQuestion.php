@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class CompletionQuestion extends Model
 {
     //
-    
+    protected $table = 'completion_questions';
 }

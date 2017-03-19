@@ -12,9 +12,9 @@ class CreateCalculationQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('calculcation_questions', function (Blueprint $table) {
+        Schema::create('calculation_questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('description');
+            $table->text('description');
             $table->string('difficulty');
             $table->string('topic');
             $table->string('source');
@@ -31,6 +31,6 @@ class CreateCalculationQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('calculcation_questions');
+        Schema::drop('calculation_questions');
     }
 }

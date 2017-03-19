@@ -14,7 +14,7 @@ class CreateChoiceQuestionsTable extends Migration
     {
         Schema::create('choice_questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('description');
+            $table->text('description');
             $table->string('difficulty');
             $table->string('topic');
             $table->string('answer');

@@ -14,7 +14,7 @@ class CreateCompletionQuestionsTable extends Migration
     {
         Schema::create('completion_questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('description');
+            $table->text('description');
             $table->string('difficulty');
             $table->string('topic');
             $table->string('source');
