@@ -1,38 +1,21 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: 55402
+ * Date: 2017/3/20
+ * Time: 11:09
+ */
+namespace App\Services;
 
-namespace App\Http\Controllers;
-
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 
-class SessionsController extends Controller
+class SessionService
 {
-    /*
-     * 已登录用户不能访问登录页面
-     */
-    public function __construct()
-    {
-        $this->middleware('guest', [
-            'only'  =>  ['create']
-        ]);
-    }
+    use ValidatesRequests;
 
-    /*
-     * 返回登录页
-     */
-    public function create()
-    {
-        return view('sessions.create');
-    }
-
-    /*
-     * 1. 登录
-     */
-    public function store(Request $request)
+    public function login(Request $request)
     {
         $this->validate($request, [
             'email' =>  'required|email|max:255',
@@ -59,15 +42,10 @@ class SessionsController extends Controller
         }
     }
 
-    /*
-     * 退出
-     */
-    public function destroy()
+    public function logout()
     {
         Auth::logout();
         session()->flash('success', '您已成功退出！');
         return redirect('login');
     }
-
-
 }

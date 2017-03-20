@@ -10,6 +10,31 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+/**
+ * App\Models\User
+ *
+ * @mixin \Eloquent
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property string $password
+ * @property string $remember_token
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property bool $is_admin
+ * @property string $activation_token
+ * @property bool $activated
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereActivated($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereActivationToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereIsAdmin($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User wherePassword($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\User whereUpdatedAt($value)
+ */
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract
@@ -51,10 +76,5 @@ class User extends Model implements AuthenticatableContract,
         $hash = md5(strtolower(trim($this->attributes['email'])));
 
         return "http://www.gravatar.com/avatar/$hash?s=$size";
-    }
-
-    public function statuses()
-    {
-        return $this->hasMany(Status::class);
     }
 }

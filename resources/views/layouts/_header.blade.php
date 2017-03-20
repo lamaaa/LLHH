@@ -7,7 +7,7 @@
                     <li><a href="{{ url() }}">首页</a></li>
                     <li><a href="#">题目</a></li>
                     <li><a href="#">试卷</a></li>
-                    <li><a href="{{ route('help') }}">关于</a></li>
+                    <li><a href="{{ route('about') }}">关于</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
