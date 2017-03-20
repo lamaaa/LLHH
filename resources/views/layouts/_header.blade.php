@@ -1,15 +1,24 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-        <div class="col-md-offset-1 col-md-10">
-            <a href="/" id="logo">LLHH习题库</a>
-            <nav>
-                <ul class="nav navbar-nav navbar-left">
-                    <li><a href="{{ url() }}">首页</a></li>
-                    <li><a href="#">题目</a></li>
-                    <li><a href="#">试卷</a></li>
-                    <li><a href="{{ route('about') }}">关于</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
+  <header class="navbar-jumbotron">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom:0">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://localhost:8000/"><img src="" alt="LLHH">  </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+              <li class="active"><a href="{{url()}}">首页</a></li>
+              <li><a href="#">题目</a></li>
+              <li><a href="#">试卷</a></li>
+              <li><a href="{{ route('about') }} " >关于</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
                         <li><a href="{{ route('user.index') }}">用户列表</a></li>
                         <li class="dropdown">
@@ -33,8 +42,8 @@
                         <li><a href="{{ route('help') }}">帮助</a></li>
                         <li><a href="{{ route('login') }}">登录</a></li>
                     @endif
-                </ul>
-            </nav>
+            </ul>
         </div>
-    </div>
-</header>
+      </div>
+    </nav>
+  </header>

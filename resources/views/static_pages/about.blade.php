@@ -10,7 +10,7 @@
 
       <div class="row featurette">
         <div class="col-md-7 ">
-          <h2 >|关于我们 <!-- class="featurette-heading" <span class="text-muted">It'll blow your mind.</span>--></h2>
+          <h3>|关于我们 <!-- class="featurette-heading" <span class="text-muted">It'll blow your mind.</span>--></h3>
           <p >
           LLHH现为高考数学题库，该网站于2016年2月28日创建。</br>
           LLHH网站可以让学生更容易在线写题，即时获得答案。可以通过知识点，难度，错题频率，类型来学习高考数学。同时也可以在线做题，并即时获得答案。通过用户做题后提交自身的难易度判断让其它用户得到最切身的反馈。本网站还有各地区各年份的真题卷，同学们能模拟答题对自身成绩有一个判定。同时，登录后还可以查看之前做过的题目与自己错误的题目及其错误次数，也使同学们更近一步的对自身知识点的掌握情况有了一定的了解。
@@ -40,7 +40,7 @@
       <div class="row featurette">
         <div class="col-md-7 ">
 
-          <h2 > |小事记 <!-- class="featurette-heading" <span class="text-muted"></span> --></h2>
+          <h3> |小事记 <!--class="featurette-heading" <span class="text-muted"></span> --></h3>
           <p>2017年2月28日，LLHH的ideal正式提出啦。</p>
           <p>2017年2月29日，LLHH分工完成开始讨论啦。</p>
           <p>2017年3月1日，LLHH的需求分析出炉啦。</p>
@@ -67,18 +67,9 @@
           <p class="lead"></p>
         </div>
       </div>
+      
+    <hr class="featurette-divider">
 
 
 
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">回到顶部</a></p>
-        <p class="text-center">&copy; Copyright 2017 -LLHH项目小组- 林浩阳 林键燃 何瑞博 何玥  </br><p class="text-center"><a href="#" >粤ICP14151106号</a></p>  </p>
-      </footer>
-
-    </div><!-- /.container -->
 @stop

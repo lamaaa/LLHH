@@ -179,7 +179,7 @@
         </div>
       </div>
 
-      <hr class="featurette-divider">
+    <hr class="featurette-divider">
 
       <!-- /END THE FEATURETTES -->
 @stop

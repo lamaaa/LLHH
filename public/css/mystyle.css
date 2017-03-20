@@ -1,0 +1,26 @@
+/*exercise problems*/ 
+#exePro  li a{
+	text-decoration: none;
+	color: black;
+	line-height: 27px
+}
+#exePro li a:hover{
+	text-decoration: underline;
+}
+#exePro li {
+	list-style: none;
+}
+
+#exePro hr{
+	background: none repeat scroll 0 0 #000000;
+    border: thin none;
+    height: 1px;
+    width: 90%;
+}
+
+/*使题目区中的日期右移*/
+.fr{
+	float: right;
+}
+
+
