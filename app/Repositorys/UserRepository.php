@@ -18,25 +18,4 @@ class UserRepository
     {
         $this->user = $user;
     }
-
-    public function createUser(Request $request)
-    {
-        return User::create([
-            'name'  =>  $request->name,
-            'email' =>  $request->email,
-            'password'  =>  bcrypt($request->password),
-        ]);
-    }
-
-    public function getUserByToken($token)
-    {
-        return User::where('activation_token', $token)->firstOrFail();
-    }
-
-    public function activateUser(User $user)
-    {
-        $user->activated = true;
-        $user->activation_token = null;
-        $user->save();
-    }
 }

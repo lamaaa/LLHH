@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Mail;
 
 class AuthController extends Controller
 {
@@ -23,6 +25,8 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    protected $redirectPath = '/';
+    //protected $redirectPath = '/';
     /**
      * Create a new authentication controller instance.
      *
@@ -61,5 +65,38 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+     /*
+     * 发送邮件给注册用户进行激活
+     */
+    protected function sendEmailConfirmationTo($user)
+    {
+        $view = 'emails.confirm';
+        $data = compact('user');
+        $from = 'yang-19950427@163.com';
+        $name = 'Lam';
+        $to = $user->email;
+        $subject = '感谢注册Sample应用！请确认您的邮箱。';
+
+        Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject){
+            $message->from($from, $name)->to($to)->subject($subject);
+        });
+    }
+
+    /*
+     * 用户激活
+     */
+    protected function confirmEmail($token)
+    {
+        $user = User::where('activation_token', $token)->firstOrFail();
+        $user->activated = true;
+        $user->activation_token = null;
+        $user->save();
+
+        Auth::login($user);
+        session()->flash('success', '恭喜您，激活成功！');
+
+        return redirect()->route('user.show', [$user]);
     }
 }

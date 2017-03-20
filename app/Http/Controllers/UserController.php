@@ -30,7 +30,7 @@ class UserController extends Controller
     public function index()
     {
         $users = $this->userService->paginate(30);
-        return view('users.index', compact('users'));
+        return view('user.index', compact('users'));
     }
 
     /*
@@ -40,15 +40,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = $this->userService->editUser($id);
-        return view('users.edit', compact('user'));
-    }
-
-    /*
-     * 返回用户注册页面
-     */
-    public function create()
-    {
-        return view('users.create');
+        return view('user.edit', compact('user'));
     }
 
     /*
@@ -58,14 +50,7 @@ class UserController extends Controller
     {
         $user = $this->userService->getUserById($id);
 
-        return view('users.show', compact('user'));
-    }
-
-    public function store(Request $request)
-    {
-        $user = $this->userService->createUser($request);
-
-        return redirect()->route('users.show', [$user]);
+        return view('user.show', compact('user'));
     }
 
     /*
@@ -75,7 +60,7 @@ class UserController extends Controller
     {
         $this->userService->updateUser($request, $id);
 
-        return redirect()->route('users.show', $id);
+        return redirect()->route('user.show', $id);
     }
 
     /*
@@ -86,15 +71,5 @@ class UserController extends Controller
         $this->userService->deleteUser($id);
 
         return back();
-    }
-
-    /*
-     * 用户激活
-     */
-    public function confirmEmail($token)
-    {
-        $user = $this->userService->confirmEmail($token);
-
-        return redirect()->route('users.show', [$user]);
     }
 }
