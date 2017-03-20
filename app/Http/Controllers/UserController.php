@@ -12,6 +12,7 @@ class UserController extends Controller
      * 未登录时不能执行edit，update，destroy操作
      * 已登录时不能执行create操作
      */
+
     public function __construct(UserService $userService)
     {
         $this->userService = $userService;
