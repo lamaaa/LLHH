@@ -74,8 +74,8 @@ class AuthController extends Controller
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = 'yang-19950427@163.com';
-        $name = 'Lam';
+        $from = '18924142715@163.com';
+        $name = 'Aranl';
         $to = $user->email;
         $subject = '感谢注册Sample应用！请确认您的邮箱。';
 
