@@ -8,7 +8,6 @@
                 <h5>更新个人资料</h5>
             </div>
             <div class="panel-body">
-
                 @include('shared.errors')
 
                 <div class="gravatar_edit">
