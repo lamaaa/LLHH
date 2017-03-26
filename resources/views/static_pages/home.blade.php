@@ -69,46 +69,12 @@
           <hr>
 
           <ul >
-            <li>
-              <a href="#">一道综合题</a> 
-              <span class="fr">2017.3.13</span>
-            </li>
-            <li>
-              <a href="#">一道综合题</a> 
-              <span class="fr">2017.3.13</span>
-            </li>
-            <li>
-              <a href="#">一道综合题</a> 
-              <span class="fr">2017.3.13</span>
-            </li>
-            <li>
-              <a href="#">一道综合题</a> 
-              <span class="fr">2017.3.13</span>
-            </li>
-            <li>
-              <a href="#">一道综合题</a> 
-              <span class="fr">2017.3.13</span>
-            </li>
-            <li>
-              <a href="#">一道综合题</a> 
-              <span class="fr">2017.3.13</span>
-            </li>
-            <li>
-              <a href="#">一道综合题请你点击以下....</a> 
-              <span class="fr">2017.3.13</span>
-            </li>
-            <li>
-              <a href="#">一道综合题请你点击以下.....</a> 
-              <span class="fr">2017.3.13</span>
-            </li>
-            <li>
-              <a href="#">一道综合题请你点击以下.....</a> 
-              <span class="fr">2017.3.13</span>
-            </li>
-            <li>
-              <a href="#">一道综合题请你点击以下.....</a> 
-              <span class="fr">2017.3.13</span>
-            </li>
+              @foreach($oldQuestions as $oldQuestion)
+                  <li>
+                      <a href="#">{!!$oldQuestion->description!!}</a>
+                      <span class="fr">{{$oldQuestion->created_at}}</span>
+                  </li>
+              @endforeach
           </ul>
           <p><a class="btn btn-default fr" href="#" role="button">阅读更多&raquo;</a></p>
         </div><!-- /.col-lg-6 -->
@@ -120,16 +86,12 @@
           <hr class="default">
 
           <ul>
-            <li><a href="#">这是一道练习题</a><span class="fr">2017.3.13</span></li>
-            <li><a href="#">这是一道练习题</a><span class="fr">2017.3.13</span></li>
-            <li><a href="#">这是一道练习题</a><span class="fr">2017.3.13</span></li>
-            <li><a href="#">这是一道练习题</a><span class="fr">2017.3.13</span></li>
-            <li><a href="#">这是一道练习题</a><span class="fr">2017.3.13</span></li>
-            <li><a href="#">这是一道练习题</a><span class="fr">2017.3.13</span></li>
-            <li><a href="#">这是一道练习题</a><span class="fr">2017.3.13</span></li>
-            <li><a href="#">这是一道练习题</a><span class="fr">2017.3.13</span></li>
-            <li><a href="#">这是一道练习题</a><span class="fr">2017.3.13</span></li>
-            <li><a href="#">这是一道练习题</a><span class="fr">2017.3.13</span></li>
+              @foreach($fallibleQuestions as $fallibleQuestion)
+                  <li>
+                      <a href="#">{!!$fallibleQuestion->description!!}</a>
+                      <span class="fr">{{$fallibleQuestion->created_at}}</span>
+                  </li>
+              @endforeach
           </ul>
           <p><a class="btn btn-default fr" href="#" role="button">阅读更多&raquo;</a></p>
         </div><!-- /.col-lg-6 -->
