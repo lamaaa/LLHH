@@ -32,3 +32,11 @@ Route::get('about', 'IndexController@about')->name('about');
 // 用户
 Route::resource('user', 'UserController');
 
+Route::get('/questions', function(){
+    return view('static_pages.questions');
+})->name('questions');
+
+//Aranl's test
+Route::get('/div',function(){
+    return view('tests.div');
+})->name('div');
