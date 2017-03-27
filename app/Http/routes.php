@@ -37,6 +37,8 @@ Route::get('/questions', function(){
 })->name('questions');
 
 //Aranl's test
-Route::get('/div',function(){
-    return view('tests.div');
-})->name('div');
+Route::get('/test',function(){
+    $hard = 2;
+    $totalhard = 6;
+    return view('static_pages.questions', compact(['hard', 'totalhard']));
+})->name('test');
