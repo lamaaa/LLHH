@@ -2,8 +2,8 @@
 @section('title', '更新个人资料')
 
 @section('content')
-    <div class="col-md-offset-2 col-md-8">
-        <div class="panel panel-default">
+    <div class="col-md-offset-4 col-md-8" style="margin-top:80px">
+        <div class="panel panel-default" style="width:730px">
             <div class="panel-heading">
                 <h5>更新个人资料</h5>
             </div>
@@ -44,5 +44,9 @@
                 </form>
             </div>
         </div>
+            <hr>
     </div>
+
+
+
 @stop
