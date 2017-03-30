@@ -28,4 +28,9 @@ class QuestionController extends Controller
 
         return view('questions.list', compact(['modules']));
     }
+
+    //Aranl 增加一个测试用的Route:doThepapers
+    public function doThePapers(){
+        return view('questions.doThePapers');
+    }
 }
