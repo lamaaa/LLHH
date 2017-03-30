@@ -16,7 +16,7 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->text('description');
             $table->integer('difficulty');
-            $table->string('topic');
+            $table->string('chapter_id')->index();
             $table->string('source');
             $table->text('answer');
             $table->string('type');

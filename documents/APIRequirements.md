@@ -24,7 +24,7 @@
 
 ## 用户模块
 
-用户个人页：`/resources/views/user/show.blade.php`
+#### 用户个人页：`/resources/views/user/show.blade.php`
 
 - Output:
     1. 返回当前登录用户的个人信息

@@ -7,6 +7,11 @@
  */
 namespace App\Repositorys;
 
-class QuestionRepository {
+use App\Models\Question;
 
+class QuestionRepository {
+    public function all()
+    {
+        return Question::all();
+    }
 }
