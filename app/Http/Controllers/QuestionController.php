@@ -20,4 +20,9 @@ class QuestionController extends Controller
     public function index(){
         return view('questions.list');
     }
+
+    //Aranl 增加一个测试用的Route:doThepapers
+    public function doThePapers(){
+        return view('questions.doThePapers');
+    }
 }

@@ -12,7 +12,7 @@
                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
               </span>
-              <button class="btn  btn-lg  btn-success ">
+              <button type="button" class="btn  btn-lg  btn-success " data-toggle="button">
                   <span>收集箱</span>
               </button>
             </div>
