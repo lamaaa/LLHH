@@ -33,6 +33,8 @@ Route::get('about', 'IndexController@about')->name('about');
 Route::resource('user', 'UserController');
 // 题目
 Route::resource('questions', 'QuestionController');
+Route::get('/chapters/{id}/questions', 'QuestionController@listQuestions')->name('questions');
+// 章节
 
 
 //Aranl--玥哥需要的路由

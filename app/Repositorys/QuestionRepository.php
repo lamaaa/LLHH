@@ -7,11 +7,13 @@
  */
 namespace App\Repositorys;
 
+
 use App\Models\Question;
 
-class QuestionRepository {
+class QuestionRepository
+{
     public function all()
     {
-        return Question::all();
+        return Question::all()->paginate();
     }
 }

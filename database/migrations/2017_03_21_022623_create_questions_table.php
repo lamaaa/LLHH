@@ -20,7 +20,6 @@ class CreateQuestionsTable extends Migration
             $table->string('source');
             $table->text('answer');
             $table->string('type');
-            $table->boolean('is_old');
             $table->integer('mistake_times')->default(0);
             $table->timestamps();
         });

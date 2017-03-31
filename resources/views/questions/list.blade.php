@@ -1,8 +1,9 @@
 @extends ('layouts.default')
 
 @section('content')
+
 <div class="container">
-      <!-- Single button -->
+      <!-- single button -->
       <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix pull-left hidden:overflow" style="margin-top:100px">
         <div class="btn-group-vertical" role="group">
           <div class="btn-group" role="group">
@@ -11,22 +12,22 @@
             </button>
               <ul class="dropdown-menu" >
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
               </ul>
           </div>
@@ -35,107 +36,107 @@
             <!--<div class="btn-">-->
             <div class="btn-group" role="group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp选修I&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span>
-              <span class="sr-only">Toggle Dropdown</span>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp选修i&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span>
+              <span class="sr-only">toggle dropdown</span>
                </button>
               <ul class="dropdown-menu">
                 <li><a href="#">第一章：集合数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
               </ul>
             </div>
             <div class="btn-group" role="group">
               <!--<button type="button" class="btn btn-default"></button>-->
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="leader">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp选修Ⅱ&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><span class="caret"></span>
-              <!--<span class="sr-only">Toggle Dropdown</span>-->
+              <span class="leader">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp选修ⅱ&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><span class="caret"></span>
+              <!--<span class="sr-only">toggle dropdown</span>-->
                </button>
               <ul class="dropdown-menu">
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函概念</a></li>
-                <li><a href="#">第二章：基本等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集与数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
               </ul>
             </div>
             <div class="btn-group" role="group">
               <!--<button type="button" class="btn btn-default"></button>-->
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="leader">选修Ⅲ<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span>
-              <span class="sr-only">Toggle Dropdown</span>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="leader">选修ⅲ<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span>
+              <span class="sr-only">toggle dropdown</span>
                </button>
               <ul class="dropdown-menu">
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
               </ul>
             </div>
             <div class="btn-group" role="group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="strong">选修Ⅳ<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span>
-              <span class="sr-only">Toggle Dropdown</span>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="strong">选修ⅳ<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span>
+              <span class="sr-only">toggle dropdown</span>
                </button>
               <ul class="dropdown-menu">
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
                 <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数Ⅰ</a></li>
+                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
                 <li><a href="#">第三章：函数的应用</a></li>
               </ul>
             </div>
@@ -178,7 +179,7 @@
                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  
+
               </span>
               <button class="btn  btn-lg  btn-success ">
                   <span>收集箱</span>
@@ -186,26 +187,26 @@
             </div>
             <div class="panel-body">
               <p>
-                  已知双曲线（a＞0,b＞0）的两条渐近线均和圆C:相切，且双曲线的右焦点为圆C的圆心，则该双曲线的方程为
+                  已知双曲线（a＞0,b＞0）的两条渐近线均和圆c:相切，且双曲线的右焦点为圆c的圆心，则该双曲线的方程为
               </p>
             </div>
             <div class="panel-footer">
               <div class="radio" >
-                    <label for="answerA" >&nbsp&nbsp&nbsp&nbsp
-                      <input id="1"  class="#" type="radio" value="option1" onclick="checked" name="answerA" >
-                    A
+                    <label for="answera" >&nbsp&nbsp&nbsp&nbsp
+                      <input id="1"  class="#" type="radio" value="option1" onclick="checked" name="answera" >
+                    a
                     </label>
-                    <label for="answerB">&nbsp&nbsp&nbsp&nbsp
-                      <input id="2"  class="#" type="radio" value="option2" onclick="checked" name="answerB">
-                      B
+                    <label for="answerb">&nbsp&nbsp&nbsp&nbsp
+                      <input id="2"  class="#" type="radio" value="option2" onclick="checked" name="answerb">
+                      b
                     </label>
-                    <label for="answerC">&nbsp&nbsp&nbsp&nbsp
-                      <input id="3"  class="#" type="radio" value="option3" onclick="checked" name="answerA" >
-                      C
+                    <label for="answerc">&nbsp&nbsp&nbsp&nbsp
+                      <input id="3"  class="#" type="radio" value="option3" onclick="checked" name="answera" >
+                      c
                     </label>
-                    <label for="answerD">&nbsp&nbsp&nbsp
-                      <input id="4"  class="#" type="radio" value="option4" onclick="checked" name="answerB">
-                      D
+                    <label for="answerd">&nbsp&nbsp&nbsp
+                      <input id="4"  class="#" type="radio" value="option4" onclick="checked" name="answerb">
+                      d
                     </label>
                   <span>
                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -214,23 +215,23 @@
                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  <button type="button" class="btn-lg  btn-danger"  data-toggle="popover" title="Popover title" 
-                          data-content="The answer">答案
+                  <button type="button" class="btn-lg  btn-danger"  data-toggle="popover" title="popover title"
+                          data-content="the answer">答案
                   </button>
               </div>
             </div>
           </div> -->
-          @include(('layouts._thePanel'))   
-          @include(('layouts._thePanel'))  
-          @include(('layouts._thePanel')) 
-          @include(('layouts._thePanel')) 
-          @include(('layouts._thePanel'))   
-          @include(('layouts._thePanel'))  
-          @include(('layouts._thePanel')) 
-          @include(('layouts._thePanel')) 
-  
-  
-  
+          @include(('layouts._thepanel'))
+          @include(('layouts._thepanel'))
+          @include(('layouts._thepanel'))
+          @include(('layouts._thepanel'))
+          @include(('layouts._thepanel'))
+          @include(('layouts._thepanel'))
+          @include(('layouts._thepanel'))
+          @include(('layouts._thepanel'))
+
+
+
         </div><!--结束做题面板-->
       </div>
 </div>

@@ -29,6 +29,12 @@ class QuestionController extends Controller
         return view('questions.list', compact(['modules']));
     }
 
+    public function listQuestions($chapter_id)
+    {
+        $questions = $this->questionRepository->all();
+        $modules = $this->moduleRepository->all();
+        return view('questions.list', compact(['questions', 'modules']));
+    }
     //Aranl 增加一个测试用的Route:doThepapers
     public function doThePapers(){
         return view('questions.doThePapers');
