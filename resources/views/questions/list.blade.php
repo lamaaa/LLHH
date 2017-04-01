@@ -6,146 +6,27 @@
       <!-- single button -->
       <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix pull-left hidden:overflow" style="margin-top:100px">
         <div class="btn-group-vertical" role="group">
+           @foreach ($modules as $module)
+              @foreach ($module->parts as $part)
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              &nbsp&nbsp&nbsp&nbsp必修部分&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span>
+              &nbsp&nbsp&nbsp&nbsp{{ $part->name}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span>
             </button>
-              <ul class="dropdown-menu" >
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
+              <ul class="dropdown-menu" >   
+                  @foreach ($part->chapters as $chapter)
+                    <li><a href="#">{{$chapter->name}}</a></li>
+                  @endforeach
               </ul>
           </div>
-            <!--<div class="btn-group-vertical" role="group">-->
-              <!--<button type="button" class="btn btn-default"></button>-->
-            <!--<div class="btn-">-->
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp选修i&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span>
-              <span class="sr-only">toggle dropdown</span>
-               </button>
-              <ul class="dropdown-menu">
-                <li><a href="#">第一章：集合数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-              </ul>
-            </div>
-            <div class="btn-group" role="group">
-              <!--<button type="button" class="btn btn-default"></button>-->
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="leader">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp选修ⅱ&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span><span class="caret"></span>
-              <!--<span class="sr-only">toggle dropdown</span>-->
-               </button>
-              <ul class="dropdown-menu">
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函概念</a></li>
-                <li><a href="#">第二章：基本等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集与数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-              </ul>
-            </div>
-            <div class="btn-group" role="group">
-              <!--<button type="button" class="btn btn-default"></button>-->
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="leader">选修ⅲ<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span>
-              <span class="sr-only">toggle dropdown</span>
-               </button>
-              <ul class="dropdown-menu">
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-              </ul>
-            </div>
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="strong">选修ⅳ<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span>
-              <span class="sr-only">toggle dropdown</span>
-               </button>
-              <ul class="dropdown-menu">
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-                <li><a href="#">第一章：集合与函数概念</a></li>
-                <li><a href="#">第二章：基本初等函数ⅰ</a></li>
-                <li><a href="#">第三章：函数的应用</a></li>
-              </ul>
-            </div>
+              @endforeach
+          @endforeach
+  
           </div>
       </nav>
 
       <div class="container marketing" style="margin-top:30px">
         <!--排序方式选项-->
-        <div class="radio" style="width:700px;float:right">
+        <div class="radio pull-right" style="width:700px">
           <span class="lead">排序方式：&nbsp&nbsp&nbsp</span>
           <label for="male" style="margin-top:8px">
             <input id="1"  class="#" type="radio" value="option1" onclick="checked" name="orderby" >
@@ -167,75 +48,21 @@
           </select>
         </div><!--结束方式选项-->
       <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
-        <div class=" pull-right">
-          <!--<div class="panel panel-default" >
-            <div class="panel-heading">
-              <span class="lead">难度：
-                  <img src="/img/nsts.gif"></img><img src="/img/nsts.gif"></img><img src="/img/nsts.gif"></img><img src="/img/nsts.gif"></img><img src="/img/nsts.gif"></img>
-              </span> <span class="lead">&nbsp入库时间：</span>
-              <span>
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
-              </span>
-              <button class="btn  btn-lg  btn-success ">
-                  <span>收集箱</span>
-              </button>
-            </div>
-            <div class="panel-body">
-              <p>
-                  已知双曲线（a＞0,b＞0）的两条渐近线均和圆c:相切，且双曲线的右焦点为圆c的圆心，则该双曲线的方程为
-              </p>
-            </div>
-            <div class="panel-footer">
-              <div class="radio" >
-                    <label for="answera" >&nbsp&nbsp&nbsp&nbsp
-                      <input id="1"  class="#" type="radio" value="option1" onclick="checked" name="answera" >
-                    a
-                    </label>
-                    <label for="answerb">&nbsp&nbsp&nbsp&nbsp
-                      <input id="2"  class="#" type="radio" value="option2" onclick="checked" name="answerb">
-                      b
-                    </label>
-                    <label for="answerc">&nbsp&nbsp&nbsp&nbsp
-                      <input id="3"  class="#" type="radio" value="option3" onclick="checked" name="answera" >
-                      c
-                    </label>
-                    <label for="answerd">&nbsp&nbsp&nbsp
-                      <input id="4"  class="#" type="radio" value="option4" onclick="checked" name="answerb">
-                      d
-                    </label>
-                  <span>
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  <button type="button" class="btn-lg  btn-danger"  data-toggle="popover" title="popover title"
-                          data-content="the answer">答案
-                  </button>
-              </div>
-            </div>
-          </div> -->
-          {{--@include(('layouts._thepanel'))--}}
-          {{--@include(('layouts._thepanel'))--}}
-          {{--@include(('layouts._thepanel'))--}}
-          {{--@include(('layouts._thepanel'))--}}
-          {{--@include(('layouts._thepanel'))--}}
-          {{--@include(('layouts._thepanel'))--}}
-          {{--@include(('layouts._thepanel'))--}}
-          {{--@include(('layouts._thepanel'))--}}
+        <div class=" pull-right" >
+   
             @foreach($questions as $question)
               <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
           <div class="panel panel-default" >
             <div class="panel-heading">
               <span class="lead">难度：
-                  <img src="/img/nsts.gif"><img src="/img/nsts.gif"><img src="/img/nsts.gif"><img src="/img/nsts.gif"><img src="/img/nsts.gif">
-              </span> <span class="lead">&nbsp入库时间：</span>
+                @for($countStar = 0; $countStar < $question->difficulty; $countStar++)
+                    <img src="/img/sts.gif" alt="a start">
+                @endfor
+                @for($countStar = 0; $countStar < 5 - $question->difficulty; $countStar++)
+                    <img src="/img/nsts.gif" alt="a null start">
+                @endfor
+              </span> 
+              <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
               <span>
                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -249,12 +76,12 @@
             </div>
             <div class="panel-body">
               <p>
-                  已知双曲线（a＞0,b＞0）的两条渐近线均和圆C:相切，且双曲线的右焦点为圆C的圆心，则该双曲线的方程为
+                  {!!$question->description!!}
               </p>
             </div>
             <div class="panel-footer">
-              <div class="radio" >
-                    <label for="answerA" >&nbsp&nbsp&nbsp&nbsp
+              <!--<div class="radio" >-->
+                    <!--<label for="answerA" >&nbsp&nbsp&nbsp&nbsp
                       <input id="1"  class="#" type="radio" value="option1" onclick="checked" name="answerA" >
                     A
                     </label>
@@ -276,11 +103,11 @@
                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  <button type="button" class="btn-lg  btn-danger"  data-toggle="popover" title="Popover title"
-                          data-content="The answer">答案
-                  </button>
-            </div>
+                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-->
+               <button type="button" class="btn-lg  btn-danger"  data-toggle="popover" title="Popover title"
+                       data-content="{!!$question->answer!!}">答案
+               </button>
+            <!--</div>-->
           </div>
         </div><!--结束做题面板-->
         @endforeach
