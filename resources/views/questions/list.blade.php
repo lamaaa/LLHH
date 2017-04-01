@@ -3,9 +3,8 @@
 @section('content')
 
 <div class="container">
-  @foreach($modules as $module)
 
-    @endforeach
+  @foreach($modules as $module)
       <!-- single button -->
       <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix pull-left hidden:overflow" style="margin-top:100px">
         <div class="btn-group-vertical" role="group">
@@ -23,7 +22,7 @@
           </div>
               @endforeach
           @endforeach
-  
+  @endforeach
           </div>
       </nav>
 
@@ -67,12 +66,9 @@
               </span> 
               <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
               <span>
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  &nbsp&nbsp
+
               </span>
-              <button type="button" class="btn  btn-lg  btn-success " data-toggle="button">
+              <button type="button" class="btn  btn-default  btn-success pull-right" data-toggle="button">
                   <span>收集箱</span>
               </button>
             </div>
@@ -106,7 +102,7 @@
                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-->
-               <button type="button" class="btn-lg  btn-danger"  data-toggle="popover" title="Popover title"
+               <button type="button" class="btn-default  btn-danger"  data-toggle="popover" title="Popover title"
                        data-content="{!!$question->answer!!}">答案
                </button>
             <!--</div>-->
