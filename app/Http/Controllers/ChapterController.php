@@ -20,6 +20,6 @@ class ChapterController extends Controller
     public function show($chapter_id)
     {
         $questions = $this->chapterRepository->getQuestions($chapter_id);
-        return view('chapters', compact('questions'));
+        return $questions->toJson();
     }
 }

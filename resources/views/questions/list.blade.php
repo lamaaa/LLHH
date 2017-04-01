@@ -3,6 +3,9 @@
 @section('content')
 
 <div class="container">
+  @foreach($modules as $module)
+
+    @endforeach
       <!-- single button -->
       <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix pull-left hidden:overflow" style="margin-top:100px">
         <div class="btn-group-vertical" role="group">
