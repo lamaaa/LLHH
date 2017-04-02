@@ -13,6 +13,6 @@ class ChapterRepository
 {
     public function getQuestions($chapter_id)
     {
-        return Question::where('chapter_id', $chapter_id)->paginate();
+        return Question::where('chapter_id', $chapter_id)->get();
     }
 }
