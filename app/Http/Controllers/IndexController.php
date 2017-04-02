@@ -23,9 +23,8 @@ class IndexController extends Controller
 
     public function home()
     {
-        $oldQuestions = $this->indexRepository->getOldQuestions(10);
         $fallibleQuestions = $this->indexRepository->getFallibleQuestions(10);
-        return view('home.index', compact(['oldQuestions', 'fallibleQuestions']));
+        return view('home.index', compact(['fallibleQuestions']));
     }
 
     public function help()

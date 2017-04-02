@@ -14,6 +14,6 @@ class QuestionRepository
 {
     public function all()
     {
-        return Question::all()->paginate();
+        return Question::paginate();
     }
 }

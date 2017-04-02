@@ -11,14 +11,6 @@ use App\Models\Question;
 
 class IndexRepository
 {
-    public function getOldQuestions($num)
-    {
-        $oldQuestions = Question::where('is_old', false)
-            ->take($num)
-            ->get();
-        return $oldQuestions;
-    }
-
     public function getFallibleQuestions($num)
     {
         $fallibleQuestions = Question::orderBy('mistake_times', 'desc')

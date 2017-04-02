@@ -69,12 +69,6 @@
           <hr>
 
           <ul >
-              @foreach($oldQuestions as $oldQuestion)
-                  <li>
-                      <a href="#">{!!$oldQuestion->description!!}</a>
-                      <span class="fr">{{$oldQuestion->created_at}}</span>
-                  </li>
-              @endforeach
           </ul>
           <p><a class="btn btn-default fr" href="#" role="button">阅读更多&raquo;</a></p>
         </div><!-- /.col-lg-6 -->
