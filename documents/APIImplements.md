@@ -31,11 +31,11 @@ $modules[]{ // 所有的模块
                          questions[]{ // 该章节拥有的问题
                              $question{
                                  "id" : int,
-                                 "description" : text, // 问题描述，包含html标签，使用需用{!!!!}
+                                 "description" : text, // 问题描述，包含html标签，注意使用需用{!!!!}
                                  "difficulty" : int， // 问题难度，取值1-5
                                  "chapter_id" : int， // 该问题所在章节id，如“1”
                                  "source" : string， // 问题来源
-                                 "answer" : text， // 问题答案
+                                 "answer" : text， // 问题答案，注意使用需用{!!!!}
                                  "type" : int， // 问题类型 1为选择题，2为填空题，3为计算题
                                  "is_old" : boolean， // 是否为真题
                                  "mistake_times" : int, // 该问题错过的次数
