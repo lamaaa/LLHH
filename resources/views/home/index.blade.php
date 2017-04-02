@@ -81,7 +81,7 @@
 
 
         
-        @endforeach
+    
           <ul>
               @foreach($fallibleQuestions as $fallibleQuestion)
                   <li>

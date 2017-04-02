@@ -15,4 +15,6 @@ class ChapterRepository
     {
         return Question::where('chapter_id', $chapter_id)->get();
     }
+
+
 }
