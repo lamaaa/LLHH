@@ -1,3 +1,5 @@
+URL: /questions
+
 控制器：QuestionController
 
 动作：index
