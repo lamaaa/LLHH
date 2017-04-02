@@ -11,7 +11,7 @@ class ChapterTableSeeder extends Seeder
      */
     public function run()
     {
-        $chapters = factory(\App\Models\Chapter::class)->times(50)->make();
+        $chapters = factory(\App\Models\Chapter::class)->times(120)->make();
         \App\Models\Chapter::insert($chapters->toArray());
     }
 }

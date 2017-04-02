@@ -80,7 +80,7 @@ $factory->define(\App\Models\Chapter::class, function (Faker\Generator $faker) {
 
     return [
         'name' => '2.1常用逻辑用语',
-        'Part_id' => 1,
+        'Part_id' => rand(1, 5),
         'created_at' => $date_time,
         'updated_at' => $date_time,
     ];

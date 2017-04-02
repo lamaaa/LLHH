@@ -22,8 +22,8 @@ modules{
                 "id" : int,
                 "name" : string, // 章节名称，如“第一章 集合与函数的概念”
                 "part_id" : int // 该章节所在的系列id，如“1”
-                "created_at" : timestamp // 章节创建时间
-                "updated_at" : timestamp // 章节更新时间
+                "created_at" : timestamp, // 章节创建时间
+                "updated_at" : timestamp, // 章节更新时间
                 "questions" : { // 该章节拥有的问题
                     "id" : int,
                     "description" : text, // 问题描述，包含html标签
@@ -34,8 +34,8 @@ modules{
                     "type" : int， // 问题类型 1为选择题，2为填空题，3为计算题
                     "is_old" : boolean， // 是否为真题
                     "mistake_times" : int, // 该问题错过的次数
-                    "created_at" : 问题创建时间
-                    "updated_at" : 问题更新时间
+                    "created_at" : timestamp, // 问题创建时间
+                    "updated_at" : timestamp, // 问题更新时间
                 }
              }
         } 
