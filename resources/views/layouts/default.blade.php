@@ -53,5 +53,8 @@
     <script src="/js/assets/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/assets/ie10-viewport-bug-workaround.js"></script>
+    <!--答案弹框!而引入的工具js-->
+    <script src="/js/assets/tooltip.js"></script>  
+    <script src="/js/assets/popover.js"></script>       
     </body>
 </html>

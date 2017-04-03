@@ -38,6 +38,6 @@ Route::resource('chapters', 'ChapterController');
 
 
 //Aranl--玥哥需要的路由
-//Route::get('/', function() {
-//    return view('');
-//});
+Route::get('/tests', function() {
+    return view('tests/answer');
+});

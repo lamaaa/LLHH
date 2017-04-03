@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container">
+
       <!-- single button -->
       <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix pull-left hidden:overflow" style="margin-top:100px">
           <div class="btn-group-vertical" role="group">
@@ -64,12 +65,9 @@
               </span> 
               <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
               <span>
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  &nbsp&nbsp
+
               </span>
-              <button type="button" class="btn  btn-lg  btn-success " data-toggle="button">
+              <button type="button" class="btn  btn-default  btn-success pull-right" data-toggle="button">
                   <span>收集箱</span>
               </button>
             </div>
@@ -80,9 +78,13 @@
               </p>
             </div>
             <div class="panel-footer">
-               <button type="button" class="btn-lg  btn-danger"  data-toggle="popover" title="Popover title">答案
-               </button>
-            {{--</div>--}}
+               <!--<button type="button" class="btn-default  btn-danger"  data-toggle="popover" title="Popover title"
+                       data-content="">答案
+               </button>-->
+               <button type="button" class="btn btn-danger" title="答案"  
+			         data-container="body" data-toggle="popover" 
+		          	data-content='{!!$question->answer!!}'>答案
+              	</button>
             </div>
           </div><!--结束做题面板-->
              @endforeach
@@ -90,6 +92,12 @@
         </div>
       </div>
 </div>
+          	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script>
+            $(function () { 
+                $("[data-toggle='popover']").popover();
+            });
+          </script>  
 <hr>
 @stop
 
