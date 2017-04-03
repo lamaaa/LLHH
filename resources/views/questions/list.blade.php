@@ -83,7 +83,7 @@
                </button>-->
                <button type="button" class="btn btn-danger" title="答案"  
 			         data-container="body" data-toggle="popover" 
-		          	data-content='{!!$question->answer!!}'>答案
+		          	data-content="{!! $question->answer !!}">答案
               	</button>
             </div>
           </div><!--结束做题面板-->
@@ -95,7 +95,9 @@
           	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
             <script>
             $(function () { 
-                $("[data-toggle='popover']").popover();
+                $("[data-toggle='popover']").popover({
+                    html: true,
+                });
             });
           </script>  
 <hr>
