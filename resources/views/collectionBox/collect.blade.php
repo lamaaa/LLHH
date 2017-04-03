@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="container mystyle" >
+    <div class="container myContainerStyle" >
 
     <!--筛选导航栏!-->
 
