@@ -4,7 +4,7 @@
 
 <div class="container">
 
-      <!-- single button -->
+     <!--知识点导航栏-->
       <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix pull-left hidden:overflow" style="margin-top:100px">
           <div class="btn-group-vertical" role="group">
            @foreach ($modules as $module)
