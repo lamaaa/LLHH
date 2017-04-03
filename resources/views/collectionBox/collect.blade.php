@@ -42,15 +42,18 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="navbar-form navbar-right">
+                    <form class="navbar-form">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="搜索题目">
+                            <input type="text" class="form-control " placeholder="搜索题目">
                         </div>
                         <button type="submit" class="btn btn-default">搜索</button>
+                        <a type="button" class="pull-right  lead" href="#">组卷</a> 
                     </form>
                 </div>
             </div>
+                    
         </nav>
+
 
 
 
