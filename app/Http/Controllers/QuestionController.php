@@ -23,10 +23,17 @@ class QuestionController extends Controller
         $this->moduleRepository = $moduleRepository;
     }
 
-    public function index(){
+    public function index()
+    {
         $modules = $this->moduleRepository->all();
         $questions = $this->questionRepository->all();
 
         return view('questions.list', compact(['modules', 'questions']));
+    }
+
+    public function show($id)
+    {
+        $question = $this->questionRepository->find($id);
+        return $question->toJson(JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
     }
 }

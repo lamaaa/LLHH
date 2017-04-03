@@ -16,4 +16,9 @@ class QuestionRepository
     {
         return Question::paginate();
     }
+
+    public function find($id)
+    {
+        return Question::findOrFail($id);
+    }
 }

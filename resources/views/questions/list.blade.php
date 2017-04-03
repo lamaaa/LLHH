@@ -80,8 +80,7 @@
               </p>
             </div>
             <div class="panel-footer">
-               <button type="button" class="btn-lg  btn-danger"  data-toggle="popover" title="Popover title"
-                       data-content="{!!$question->answer!!}">答案
+               <button type="button" class="btn-lg  btn-danger"  data-toggle="popover" title="Popover title">答案
                </button>
             {{--</div>--}}
             </div>
