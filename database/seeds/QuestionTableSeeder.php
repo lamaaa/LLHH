@@ -11,9 +11,9 @@ class QuestionTableSeeder extends Seeder
      */
     public function run()
     {
-        $choiceQuestions = factory(\App\Models\Question::class, 'choice')->times(50)->make();
-        $completionQuestions = factory(\App\Models\Question::class, 'completion')->times(50)->make();
-        $calculationQuestions = factory(\App\Models\Question::class, 'calculation')->times(50)->make();
+        $choiceQuestions = factory(\App\Models\Question::class, 'choice')->times(200)->make();
+        $completionQuestions = factory(\App\Models\Question::class, 'completion')->times(200)->make();
+        $calculationQuestions = factory(\App\Models\Question::class, 'calculation')->times(200)->make();
         \App\Models\Question::insert($choiceQuestions->toArray());
         \App\Models\Question::insert($completionQuestions->toArray());
         \App\Models\Question::insert($calculationQuestions->toArray());

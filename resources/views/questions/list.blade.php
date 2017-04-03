@@ -16,7 +16,7 @@
                         </button>
                         <ul class="dropdown-menu" >
                         @foreach ($part->chapters as $chapter)
-                            <li><a href="#">{{$chapter->name}}</a></li>
+                            <li><a href="{{ route('chapters.show', $chapter->id) }}">{{$chapter->name}}</a></li>
                         @endforeach
                         </ul>
                     </div>
@@ -37,16 +37,16 @@
             <input id="2"  class="#" type="radio" value="option2" onclick="checked" name="orderby">
               入库时间
           </label>
-          <span class="lead"> &nbsp&nbsp&nbsp&nbsp
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp难度： </span>
-          <select class="form-control input" name="type" id="difficult" style="width:80px;float:right" >
-            <option value="0">全部</option>
-            <option value="1">容易</option>
-            <option value="2">中等</option>
-            <option value="3">困难</option>
-          </select>
+            <form action="www.baidu.com" method="GET" name="sortForm">
+                <span class="lead"> 难度： </span>
+                <select class="form-control input" name="type" id="difficult" style="width:80px;float:right" >
+                    <option value="0">全部</option>
+                    <option value="1">容易</option>
+                    <option value="2">中等</option>
+                    <option value="3">困难</option>
+                </select>
+            </form>
+
         </div><!--结束方式选项-->
 
       <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
@@ -99,6 +99,14 @@
                     html: true,
                 });
             });
+
+            window.onload = function(){
+                var theSelect = document.getElementsByName("type");
+                var theForm = document.getElementsByName("sortForm");
+                theSelect[0].onchange=function () {
+                    theForm[0].submit();
+                }
+            }
           </script>  
 <hr>
 @stop

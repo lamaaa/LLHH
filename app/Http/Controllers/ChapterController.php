@@ -3,23 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Repositorys\ChapterRepository;
+use App\Repositorys\ModuleRepository;
+use App\Services\ChapterService;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class ChapterController extends Controller
 {
     protected $chapterRepository;
+    protected $moduleRepository;
+    protected $chapterService;
 
-    public function __construct(ChapterRepository $chapterRepository)
+    public function __construct(ChapterRepository $chapterRepository,
+                                ModuleRepository $moduleRepository,
+                                ChapterService $chapterService)
     {
         $this->chapterRepository = $chapterRepository;
+        $this->moduleRepository = $moduleRepository;
+        $this->chapterService = $chapterService;
     }
 
-    public function show($chapter_id)
+    public function show(Request $request, $chapter_id)
     {
-        $questions = $this->chapterRepository->getQuestions($chapter_id);
-        return $questions->toJson(JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
+        $difficulty = $this->chapterService->getDifficulty($request);
+        $modules = $this->moduleRepository->all();
+        $questions = $this->chapterRepository->questions($chapter_id, $difficulty);
+        return view('chapters.show', compact(['modules', 'questions', 'difficulty', 'chapter_id']));
     }
 }

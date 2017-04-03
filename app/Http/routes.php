@@ -12,29 +12,29 @@
 */
 
 // 认证路由
-Route::get('login', 'Auth\AuthController@getLogin')->name('login');
-Route::post('login', 'Auth\AuthController@postLogin')->name('login');
-Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
+Route::get('/login', 'Auth\AuthController@getLogin')->name('login');
+Route::post('/login', 'Auth\AuthController@postLogin')->name('login');
+Route::get('/logout', 'Auth\AuthController@getLogout')->name('logout');
 // 注册路由
-Route::get('register', 'Auth\AuthController@getRegister')->name('register');
-Route::post('register', 'Auth\AuthController@postRegister')->name('register');
+Route::get('/register', 'Auth\AuthController@getRegister')->name('register');
+Route::post('/register', 'Auth\AuthController@postRegister')->name('register');
 // 邮箱验证
-Route::get('register/confirm/{token}', 'Auth\AuthController@confirmEmail')->name('confirm_email');
+Route::get('/register/confirm/{token}', 'Auth\AuthController@confirmEmail')->name('confirm_email');
 // 密码重置
-Route::get('password/email', 'Auth\PasswordController@getEmail')->name('password.reset');
-Route::post('password/email', 'Auth\PasswordController@postEmail')->name('password.reset');
-Route::get('password/reset/{token}', 'Auth\PasswordController@getReset')->name('password.edit');
-Route::post('password/reset', 'Auth\PasswordController@postReset')->name('password.update');
+Route::get('/password/email', 'Auth\PasswordController@getEmail')->name('password.reset');
+Route::post('/password/email', 'Auth\PasswordController@postEmail')->name('password.reset');
+Route::get('/password/reset/{token}', 'Auth\PasswordController@getReset')->name('password.edit');
+Route::post('/password/reset', 'Auth\PasswordController@postReset')->name('password.update');
 // 默认
 Route::get('/', 'IndexController@home')->name('home');
 Route::get('/help', 'IndexController@help')->name('help');
-Route::get('about', 'IndexController@about')->name('about');
+Route::get('/about', 'IndexController@about')->name('about');
 // 用户
-Route::resource('user', 'UserController');
+Route::resource('/user', 'UserController');
 // 题目
-Route::resource('questions', 'QuestionController');
+Route::resource('/questions', 'QuestionController');
 // 章节
-Route::resource('chapters', 'ChapterController');
+Route::resource('/chapters', 'ChapterController');
 
 
 //Aranl--玥哥需要的路由
