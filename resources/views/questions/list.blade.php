@@ -79,9 +79,14 @@
             </div>
             <div class="panel-footer">
 
-               <button type="button" class="btn-default  btn-danger"  data-toggle="popover" title="Popover title"
-                       data-content="{!!$question->answer!!}">答案
-               </button>
+               <!--<button type="button" class="btn-default  btn-danger"  data-toggle="popover" title="Popover title"
+                       data-content="">答案
+               </button>-->
+               <button type="button" class="btn btn-danger" title="答案"  
+			         data-container="body" data-toggle="popover" 
+		          	data-content='{!!$question->answer!!}'>答案
+              	</button>
+               
             </div>
           </div><!--结束做题面板-->
              @endforeach
@@ -89,6 +94,12 @@
         </div>
       </div>
 </div>
+          	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script>
+            $(function () { 
+                $("[data-toggle='popover']").popover();
+            });
+          </script>  
 <hr>
 @stop
 
