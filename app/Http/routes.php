@@ -37,7 +37,12 @@ Route::resource('/questions', 'QuestionController');
 Route::resource('/chapters', 'ChapterController');
 
 
-//Aranl--玥哥需要的路由
+//Aranl--
 Route::get('/tests', function() {
     return view('tests/answer');
+});
+
+//Aranl--收集箱
+Route::get('/collectionBox', function() {
+    return view('collectionBox.collect');
 });

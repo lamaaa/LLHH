@@ -67,8 +67,9 @@
               <span>
 
               </span>
-              <button type="button" class="btn  btn-default  btn-success pull-right" data-toggle="button">
-                  <span>收集箱</span>
+              <button type="button" id="collectButton" data-complete-text="移出收集箱" class="btn  btn-success pull-right" data-toggle="button"
+                       onclick="saveToCollectionBox();" autocomplete="off">
+                  加入收集箱
               </button>
             </div>
 
@@ -78,9 +79,6 @@
               </p>
             </div>
             <div class="panel-footer">
-               <!--<button type="button" class="btn-default  btn-danger"  data-toggle="popover" title="Popover title"
-                       data-content="">答案
-               </button>-->
                <button type="button" class="btn btn-danger" title="答案"  
 			         data-container="body" data-toggle="popover" 
 		          	data-content="{!! $question->answer !!}">答案
@@ -93,6 +91,8 @@
       </div>
 </div>
           	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+            
+        <!-- 弹出框 !-->      
             <script>
             $(function () { 
                 $("[data-toggle='popover']").popover({
@@ -108,6 +108,22 @@
                 }
             }
           </script>  
+
+        <!-- 收集箱 ！-->
+          <script>  
+              var status = 0;//初始化被收集的状态
+              function saveToCollectionBox(){  
+                  var btn = $("#collectButton "); 
+                 
+                  if(status == 0){
+                    btn.button('complete');  
+                    status = 1; //被收集
+                  }else{
+                    btn.button('reset');
+                    status = 0; //没被收集
+                  }      
+              }  
+          </script> 
 <hr>
 @stop
 
