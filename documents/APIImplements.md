@@ -66,3 +66,10 @@ questions[]{ // 所有的问题
     } 
 }
 ```
+
+URL: /collectionBoxes/ Method: POST
+
+返回数据：
+```php
+{"resultCode": int} // 0为添加错误，1为添加成功，2为已添加过 
+```

@@ -77,4 +77,9 @@ class User extends Model implements AuthenticatableContract,
 
         return "http://www.gravatar.com/avatar/$hash?s=$size";
     }
+
+    public function collectionBox()
+    {
+        return $this->hasOne(CollectionBox::class, 'user_id');
+    }
 }

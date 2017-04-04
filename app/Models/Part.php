@@ -10,4 +10,9 @@ class Part extends Model
     {
         return $this->hasMany('App\Models\Chapter');
     }
+
+    public function module()
+    {
+        return $this->belongsTo('App\Models\Module');
+    }
 }

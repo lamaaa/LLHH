@@ -54,32 +54,25 @@
                 <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
                     <div class="panel panel-default" >
                         <div class="panel-heading">
-              <span class="lead">难度：
-                  @for($countStar = 0; $countStar < $question->difficulty; $countStar++)
-                      <img src="/img/sts.gif" alt="a start">
-                  @endfor
-                  @for($countStar = 0; $countStar < 5 - $question->difficulty; $countStar++)
-                      <img src="/img/nsts.gif" alt="a null start">
-                  @endfor
-              </span>
+                      <span class="lead">难度：
+                          @for($countStar = 0; $countStar < $question->difficulty; $countStar++)
+                              <img src="/img/sts.gif" alt="a start">
+                          @endfor
+                          @for($countStar = 0; $countStar < 5 - $question->difficulty; $countStar++)
+                              <img src="/img/nsts.gif" alt="a null start">
+                          @endfor
+                      </span>
                             <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
-                            <span>
-
-              </span>
                             <button type="button" class="btn  btn-default  btn-success pull-right" data-toggle="button">
                                 <span>收集箱</span>
                             </button>
                         </div>
-
                         <div class="panel-body">
                             <p>
                                 {!!$question->description!!}
                             </p>
                         </div>
                         <div class="panel-footer">
-                            <!--<button type="button" class="btn-default  btn-danger"  data-toggle="popover" title="Popover title"
-                                    data-content="">答案
-                            </button>-->
                             <button type="button" class="btn btn-danger" title="答案"
                                     data-container="body" data-toggle="popover"
                                     data-content="{!! $question->answer !!}">答案
