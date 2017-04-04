@@ -10,7 +10,6 @@ namespace App\Repositorys;
 use App\Models\Collection;
 use App\Models\CollectionBox;
 use App\Models\Question;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -69,14 +68,14 @@ class CollectionRepository
         return $collectionBox;
     }
 
-    public function getCollectQuestions()
+    public function getCollectedQuestions()
     {
-        $collectionBox = Auth::user()->collectionBox;
-        $collectionBoxQuestions = $collectionBox->collectionBoxQuestions;
-        foreach ($collectionBoxQuestions as $collectionBoxQuestion)
+        $questions = array();
+        $collections = Auth::user()->collections;
+        foreach ($collections as $collection)
         {
-            $collectionBoxQuestion->question->collected_at = $collectionBoxQuestion->created_at;
-            $questions[] = $collectionBoxQuestion->question;
+            $collection->question->collected_at = $collection->created_at;
+            $questions[] = $collection->question;
         }
         return $questions;
     }

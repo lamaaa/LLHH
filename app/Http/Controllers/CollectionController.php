@@ -25,8 +25,8 @@ class CollectionController extends Controller
 
     public function index(Request $request)
     {
-        $collectQuestions = $this->collectionRepository->getCollectQuestions();
-        $questions = $this->collectionService->paginate($request,$collectQuestions);
+        $collectedQuestions = $this->collectionRepository->getCollectedQuestions();
+        $questions = $this->collectionService->paginate($request,$collectedQuestions);
         return view('collections.index', compact('questions'));
     }
 

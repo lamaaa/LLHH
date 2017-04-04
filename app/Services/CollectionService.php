@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Input;
 
 class CollectionService
 {
-    public function paginate(Request $request, $collectQuestions)
+    public function paginate(Request $request, $collectedQuestions)
     {
         $page = Input::get('page', 1);
         $perPage = 15;
         $offset = ($page * $perPage) - $perPage;
 
         return new LengthAwarePaginator(
-            array_slice($collectQuestions, $offset, $perPage, true),
-            count($collectQuestions),
+            array_slice($collectedQuestions, $offset, $perPage, true),
+            count($collectedQuestions),
             $perPage,
             $page,
             ['path' => $request->url(), 'query' => $request->query()]
