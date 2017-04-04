@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCollectionBoxQuestionsTable extends Migration
+class CreateCollectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,9 @@ class CreateCollectionBoxQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('collectionBox_questions', function (Blueprint $table) {
+        Schema::create('collections', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('collectionBox_id')->index();
+            $table->integer('user_id')->index();
             $table->integer('question_id')->index();
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ class CreateCollectionBoxQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('collectionBox_questions');
+        Schema::drop('collections');
     }
 }

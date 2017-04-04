@@ -7,21 +7,20 @@
  */
 namespace App\Repositorys;
 
+use App\Models\Collection;
 use App\Models\CollectionBox;
-use App\Models\CollectionBoxQuestion;
 use App\Models\Question;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CollectionBoxRepository
+class CollectionRepository
 {
     public $resultCode = array();
 
     public function addQuestion(Request $request)
     {
-        $collectionBox = $this->getCollectionBox();
-        $isAdd = $this->createCollectionBoxQuestion($collectionBox, $request->input('question_id'));
+        $isAdd = $this->createCollection($request->input('question_id'));
 
         if (!$isAdd)
         {
@@ -30,27 +29,27 @@ class CollectionBoxRepository
         return $this->resultCode;
     }
 
-    public function createCollectionBoxQuestion(CollectionBox $collectionBox, $question_id)
+    public function createCollection($question_id)
     {
         // 验证$question_id是否合法
         if (!Question::find($question_id))
         {
             return false;
         }
-        $collectionBoxQuestion = CollectionBoxQuestion::where('collectionBox_id', $collectionBox->id)
+        $collection = Collection::where('user_id', Auth::user()->id)
             ->where('question_id', $question_id)->first();
         // 已添加
-        if ($collectionBoxQuestion)
+        if ($collection)
         {
             $this->resultCode = ['resultCode' => 2];
             return true;
         }
         // 未添加
-        $collectionBoxQuestion = CollectionBoxQuestion::create([
-                'collectionBox_id'  =>  $collectionBox->id,
+        $collection = Collection::create([
+                'user_id'  =>  Auth::user()->id,
                 'question_id'       =>  $question_id
             ]);
-        if ($collectionBoxQuestion)
+        if ($collection)
         {
             $this->resultCode = ['resultCode' => 1];
             return true;
