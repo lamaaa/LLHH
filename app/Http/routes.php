@@ -36,7 +36,7 @@ Route::resource('/questions', 'QuestionController');
 // 章节
 Route::resource('/chapters', 'ChapterController');
 // 收集箱
-Route::resource('/collectionBoxes', 'CollectionBoxController');
+Route::resource('/collections', 'CollectionController');
 
 
 Route::get('/test', function() {

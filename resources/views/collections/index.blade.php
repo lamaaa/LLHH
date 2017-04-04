@@ -10,7 +10,7 @@
             <div class="container">
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav pull-left">
-                        <li> 
+                        <li>
                             <a href="#" class="navbar-brand"><span><strong>排序：</strong></span></a>
                         </li>
                         <li>
@@ -21,7 +21,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false">难度<span class="caret"></span> 
+                            aria-haspopup="true" aria-expanded="false">难度<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">全部</a></li>
@@ -32,7 +32,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false">题型<span class="caret"></span> 
+                            aria-haspopup="true" aria-expanded="false">题型<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">选择题</a></li>
@@ -55,40 +55,49 @@
 
 
 
+
         <!--显示被筛选的试题！默认显示全部-->
         <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
         @foreach($collectQuestions as $collectQuestion)
         <div class="panel panel-default" >
             <div class="panel-heading">
               <span class="lead">难度：
-                  @for($countStar = 0; $countStar < $collectQuestion->difficulty; $countStar++)
+                  @for($countStar = 0; $countStar < $question->difficulty; $countStar++)
                       <img src="/img/sts.gif" alt="a start">
                   @endfor
-                  @for($countStar = 0; $countStar < 5 - $collectQuestion->difficulty; $countStar++)
+                  @for($countStar = 0; $countStar < 5 - $question->difficulty; $countStar++)
                       <img src="/img/nsts.gif" alt="a null start">
                   @endfor
-              </span> 
-              <span class="lead">
-                    &nbsp收藏时间：{{ $collectQuestion->collected_at }}
               </span>
+              <span class="lead">&nbsp收藏时间：{{ $question->collected_at }}</span>
               <button id="collectButton" data-complete-text="已收集" class="btn  btn  btn-success btn-style pull-right" onclick="saveToCollectionBox()">
                   <span>收集箱</span>
               </button>
             </div>
             <div class="panel-body">
-                {!! $collectQuestion->description !!}
+                {!! $question->description !!}
             </div>
             <div class="panel-footer">
+<!--<<<<<<< HEAD:resources/views/collectionBoxes/index.blade.php
                   <button type="button" class="btn btn-danger" data-toggle="popover" title="答案" 
                           data-content="{!! $collectQuestion->answer !!}">答案
                   </button>
             </div>
         </div><!--结束做题面板-->
-         @endforeach
+         <!--@endforeach-->
+                  <button type="button" class="btn btn-danger"  data-toggle="popover" title="答案"
+                          data-content="{!! $question->answer !!}">答案
+                  </button>
+            </div>
+            
+        </div>
+        @endforeach
+        {{ $questions->render() }}
     </div>
 
 
         <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
             
         <script src="/js/myjs/myJsStyle.js"></script>
+
 @stop

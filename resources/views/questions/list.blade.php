@@ -67,7 +67,7 @@
               <span>
 
               </span>
-              <button type="button" id="collectButton" data-complete-text="移出收集箱" class="btn  btn-success pull-right" data-toggle="button"
+              <button type="button" id="{{$question->id}}" data-complete-text="移出收集箱" class="btn  btn-success pull-right" data-toggle="button"
                        onclick="saveToCollectionBox();" autocomplete="off">
                   加入收集箱
               </button>
