@@ -42,22 +42,21 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="navbar-form">
+                    <form class="navbar-form ">
                         <div class="form-group">
                             <input type="text" class="form-control " placeholder="搜索题目">
                         </div>
                         <button type="submit" class="btn btn-default">搜索</button>
-                        <a type="button" class="pull-right  lead" href="#">组卷</a> 
                     </form>
+                    <a type="button" class="pull-right btn-info  lead" href="#">组卷</a> 
                 </div>
-            </div>
-                    
-        </nav>
+            </div>        
+        </nav><!--结束导航栏-->
 
 
 
 
-    <!--显示被筛选的试题！默认显示全部-->
+        <!--显示被筛选的试题！默认显示全部-->
         <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
         <div class="panel panel-default" >
             <div class="panel-heading">
@@ -81,7 +80,8 @@
                           data-content="A">答案
                   </button>
             </div>
-        </div>
+        </div><!--结束做题面板-->
+
     </div>
 
 
@@ -98,9 +98,9 @@
             window.onload = function(){
                 var theSelect = document.getElementsByName("type");
                 var theForm = document.getElementsByName("sortForm");
-                theSelect[0].onchange=function () {
-                    theForm[0].submit();
-                }
+                // theSelect[0].onchange=function () {
+                //     theForm[0].submit();
+                // }
             }
           </script>  
 
