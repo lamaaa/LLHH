@@ -13,8 +13,8 @@
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav">
               <li class="active"><a href="{{url()}}">首页</a></li>
-              <li><a href="{{ route('questions.index') }}">题目</a></li>
-              <li><a href="#">试卷</a></li>
+              <li><a href="{{ route('questions.index') }}">题库</a></li>
+              <li><a href="{{ route('collectionBoxes.index') }}">收集箱</a></li>
               <li><a href="{{ route('about') }} " >关于</a>
               </li>
             </ul>

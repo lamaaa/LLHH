@@ -35,14 +35,16 @@ Route::resource('/user', 'UserController');
 Route::resource('/questions', 'QuestionController');
 // 章节
 Route::resource('/chapters', 'ChapterController');
+// 收集箱
+Route::resource('/collectionBoxes', 'CollectionBoxController');
 
+
+Route::get('/test', function() {
+    return view('tests.test');
+});
 
 //Aranl--
 Route::get('/tests', function() {
     return view('tests/answer');
 });
 
-//Aranl--收集箱
-Route::get('/collectionBox', function() {
-    return view('collectionBox.collect');
-});
