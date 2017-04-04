@@ -16,8 +16,4 @@ class ModuleRepository
         return Module::all();
     }
 
-    public function allParts()
-    {
-        return Module::parts();
-    }
 }

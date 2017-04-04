@@ -21,7 +21,8 @@ class CollectionBoxController extends Controller
 
     public function index()
     {
-        return view('collectionBoxes.index');
+        $collectQuestions = $this->collectionBoxRepository->getCollectQuestions();
+        return view('collectionBoxes.index', compact('collectQuestions'));
     }
 
     public function store(Request $request)
