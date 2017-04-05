@@ -88,7 +88,7 @@ questions[]{ // 所有的问题
 
 3.Url: /collections/delete Method: POST
 
-从收集箱中取出试题
+从收集箱中移除试题
 
 发送数据：
 ```php
@@ -101,6 +101,6 @@ questions[]{ // 所有的问题
 返回数据：
 ```php
 {
-    "resultCode" : int // 0为添加错误，1为添加成功
+    "resultCode" : int // 0为移除错误，1为移除成功
 }
 ```
