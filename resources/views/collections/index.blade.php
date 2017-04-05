@@ -58,7 +58,7 @@
 
         <!--显示被筛选的试题！默认显示全部-->
         <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
-        @foreach($collectQuestions as $collectQuestion)
+        @foreach($questions as $question)
         <div class="panel panel-default" >
             <div class="panel-heading">
               <span class="lead">难度：
@@ -68,8 +68,10 @@
                   @for($countStar = 0; $countStar < 5 - $question->difficulty; $countStar++)
                       <img src="/img/nsts.gif" alt="a null start">
                   @endfor
+              </span> 
+              <span class="lead">
+                    &nbsp收藏时间：{{ $question->collected_at }}
               </span>
-              <span class="lead">&nbsp收藏时间：{{ $question->collected_at }}</span>
               <button id="collectButton" data-complete-text="已收集" class="btn  btn  btn-success btn-style pull-right" onclick="saveToCollectionBox()">
                   <span>收集箱</span>
               </button>
@@ -78,20 +80,12 @@
                 {!! $question->description !!}
             </div>
             <div class="panel-footer">
-<!--<<<<<<< HEAD:resources/views/collectionBoxes/index.blade.php
                   <button type="button" class="btn btn-danger" data-toggle="popover" title="答案" 
-                          data-content="{!! $collectQuestion->answer !!}">答案
-                  </button>
-            </div>
-        </div><!--结束做题面板-->
-         <!--@endforeach-->
-                  <button type="button" class="btn btn-danger"  data-toggle="popover" title="答案"
                           data-content="{!! $question->answer !!}">答案
                   </button>
             </div>
-            
-        </div>
-        @endforeach
+        </div><!--结束做题面板-->
+         @endforeach
         {{ $questions->render() }}
     </div>
 

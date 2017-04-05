@@ -27,32 +27,55 @@
 
       <div class="container marketing" style="margin-top:30px">
         <!--排序方式选项-->
-        <div class="radio pull-right" style="width:700px">
-          <span class="lead">排序方式：&nbsp&nbsp&nbsp</span>
-          <label for="male" style="margin-top:8px">
-            <input id="1"  class="#" type="radio" value="option1" onclick="checked" name="orderby" >
-              按收集次数
-          </label>
-          <label for="female">
-            <input id="2"  class="#" type="radio" value="option2" onclick="checked" name="orderby">
-              入库时间
-          </label>
-            <form action="www.baidu.com" method="GET" name="sortForm">
-                <span class="lead"> 难度： </span>
-                <select class="form-control input" name="type" id="difficult" style="width:80px;float:right" >
-                    <option value="0">全部</option>
-                    <option value="1">容易</option>
-                    <option value="2">中等</option>
-                    <option value="3">困难</option>
-                </select>
-            </form>
-
-        </div><!--结束方式选项-->
+                <!--筛选导航栏!-->
+        <nav class="navbar navbar-default pull-right" style="width:800px">
+            <div class="container">
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-left">
+                        <li>
+                            <a href="#" class="navbar-brand"><span><strong>排序：</strong></span></a>
+                        </li>
+                        <li>
+                            <a href="#">按入库时间</a>
+                        </li>
+                        <li>
+                            <a href="#">按被收集次数</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false">难度<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">全部</a></li>
+                                <li><a href="#">容易</a></li>
+                                <li><a href="#">中等</a></li>
+                                <li><a href="#">困难</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false">题型<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">选择题</a></li>
+                                <li><a href="#">计算题</a></li>
+                                <li><a href="#">应用题</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form ">
+                        <div class="form-group">
+                            <input type="text" class="form-control " placeholder="搜索题目">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+                </div>
+            </div>        
+        </nav><!--结束导航栏-->
 
       <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
         <div class=" pull-right" style="width:800px">
             @foreach($questions as $question)
-              <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
           <div class="panel panel-default" >
             <div class="panel-heading">
               <span class="lead">难度：
@@ -67,7 +90,7 @@
               <span>
 
               </span>
-              <button type="button" id="{{$question->id}}" data-complete-text="移出收集箱" class="btn  btn-success pull-right" data-toggle="button"
+              <button type="button" id="colectButton" data-complete-text="移出收集箱" class="btn  btn-success pull-right" data-toggle="button"
                        onclick="saveToCollectionBox();" autocomplete="off">
                   加入收集箱
               </button>
@@ -91,39 +114,7 @@
       </div>
 </div>
           	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-            
-        <!-- 弹出框 !-->      
-            <script>
-            $(function () { 
-                $("[data-toggle='popover']").popover({
-                    html: true,
-                });
-            });
-
-            window.onload = function(){
-                var theSelect = document.getElementsByName("type");
-                var theForm = document.getElementsByName("sortForm");
-                theSelect[0].onchange=function () {
-                    theForm[0].submit();
-                }
-            }
-          </script>  
-
-        <!-- 收集箱 ！-->
-          <script>  
-              var status = 0;//初始化被收集的状态
-              function saveToCollectionBox(){  
-                  var btn = $("#collectButton "); 
-                 
-                  if(status == 0){
-                    btn.button('complete');  
-                    status = 1; //被收集
-                  }else{
-                    btn.button('reset');
-                    status = 0; //没被收集
-                  }      
-              }  
-          </script> 
+            <script src="/js/myjs/myJsStyle.js">
 <hr>
 @stop
 

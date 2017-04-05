@@ -7,17 +7,9 @@
                     html: true,
                 });
             });
-
-            // window.onload = function(){
-            //     var theSelect = document.getElementsByName("type");
-            //     var theForm = document.getElementsByName("sortForm");
-            //     // theSelect[0].onchange=function () {
-            //     //     theForm[0].submit();
-            //     // }
-            // }
           
 
-     //   <!-- 收集箱 ！-->
+     //   收集箱 
            
              
               var status = 0; 
@@ -33,5 +25,28 @@
                   }      
               }  
 
-        
+
+//Ajax
+function collectToBox(question_id){
+    var btn = $("#question_id");
+    btn(document).ready(function(){
+        btn("button").click(function(){
+            btn.post("localhost:8000/collects","question_id",function(collectionStatus){
+                if(collectionStatus=="加入收集箱"){
+                    document.getElementById("collectButton").innerHTML = "移出收集箱";
+                    collectionStatus = "移出收集箱";
+               }else{
+                    document.getElementById("collectButton").innerHTML = "加入收集箱";
+                    collectionStatus = "加入收集箱";
+                    //加入收集箱          
+               }
+            });
+        });
+    });
+    btn.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+        }
+    });
+}        
           
