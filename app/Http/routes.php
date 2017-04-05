@@ -37,10 +37,13 @@ Route::resource('/questions', 'QuestionController');
 Route::resource('/chapters', 'ChapterController');
 // 收集箱
 Route::resource('/collections', 'CollectionController');
+Route::post('/collections/delete', 'CollectionController@delete')->name('collections.delete');
 
-
-Route::get('/test', function() {
-    return view('tests.test');
+Route::get('/testAdd', function(){
+    return view('tests.testAdd');
+});
+Route::get('/testDelete', function(){
+    return view('tests.testDelete');
 });
 
 //Aranl--

@@ -10,39 +10,39 @@
         <nav class="navbar navbar-default" >
             <div class="container">
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav pull-left">
-                        <li>
-                            <a href="#" class="navbar-brand"><span><strong>排序：</strong></span></a>
-                        </li>
-                        <li>
-                            <a href="#">收藏时间: </a>
-                        </li>
-                        <li>
-                            <a href="#">错误次数</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false">难度<span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">全部</a></li>
-                                <li><a href="#">容易</a></li>
-                                <li><a href="#">中等</a></li>
-                                <li><a href="#">困难</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false">题型<span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">选择题</a></li>
-                                <li><a href="#">计算题</a></li>
-                                <li><a href="#">应用题</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="navbar-form">
+                    <form action="{{ route('collections.index') }}" id="screenForm" method="GET">
+                        <ul class="nav navbar-nav pull-left">
+                            <li>
+                                <span><strong>排序：</strong></span>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">收藏时间</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">错误次数</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">难度<span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">全部</a></li>
+                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">容易</a></li>
+                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">中等</a></li>
+                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">困难</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">题型<span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">选择题</a></li>
+                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">计算题</a></li>
+                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">应用题</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                         <div class="form-group">
                             <input type="text" class="form-control " placeholder="搜索题目">
                         </div>

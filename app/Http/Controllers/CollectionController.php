@@ -32,7 +32,13 @@ class CollectionController extends Controller
 
     public function store(Request $request)
     {
-        $resultCode = $this->collectionRepository->addQuestion($request);
+        $resultCode = $this->collectionRepository->addCollection($request);
+        return $resultCode;
+    }
+
+    public function delete(Request $request)
+    {
+        $resultCode = $this->collectionRepository->deleteCollection($request);
         return $resultCode;
     }
 }
