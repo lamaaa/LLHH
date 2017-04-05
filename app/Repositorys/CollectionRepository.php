@@ -8,7 +8,6 @@
 namespace App\Repositorys;
 
 use App\Models\Collection;
-use App\Models\CollectionBox;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +16,24 @@ class CollectionRepository
 {
     public $resultCode = array();
 
-    public function addQuestion(Request $request)
+    public function deleteCollection(Request $request)
+    {
+        $question_id = $request->input('question_id');
+        $collection = Collection::where('question_id', $question_id)
+            ->where('user_id', Auth::user()->id)->first();
+        if ($collection)
+        {
+            if ($collection->delete())
+            {
+                $this->resultCode = ['resultCode' => 1];
+                return $this->resultCode;
+            }
+        }
+        $this->resultCode = ['resultCode' => 0];
+        return $this->resultCode;
+    }
+
+    public function addCollection(Request $request)
     {
         $isAdd = $this->createCollection($request->input('question_id'));
 

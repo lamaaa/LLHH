@@ -90,9 +90,9 @@
               <span>
 
               </span>
-              <button type="button" id="colectButton" data-complete-text="移出收集箱" class="btn  btn-success pull-right" data-toggle="button"
-                       onclick="saveToCollectionBox();" autocomplete="off">
-                  加入收集箱
+              <input id="questionId" type="hidden" value="{{$question->id}}" />
+              <button id="collectButton" data-complete-text="已收集" class="btn  btn  btn-success btn-style pull-right">
+                  <span id="collectionBox">收集箱<span>
               </button>
             </div>
 

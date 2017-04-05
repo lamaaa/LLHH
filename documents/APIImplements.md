@@ -1,4 +1,4 @@
-URL: /questions
+1.Url: /questions
 
 控制器：QuestionController
 
@@ -67,9 +67,40 @@ questions[]{ // 所有的问题
 }
 ```
 
-URL: /collectionBoxes/ Method: POST
+2.Url: /collections/ Method: POST
+
+添加试题到收集箱中
+
+发送数据：
+```php
+{
+    "question_id" : int // 题目的id
+    "_token"      : string // csrf_token，可由{{csrf_token()}}得到，具体请看Laravel5.1文档。   
+}
+```
 
 返回数据：
 ```php
-{"resultCode": int} // 0为添加错误，1为添加成功，2为已添加过 
+{
+    "resultCode" : int // 0为添加错误，1为添加成功，2为已添加过 
+} 
+```
+
+3.Url: /collections/delete Method: POST
+
+从收集箱中移除试题
+
+发送数据：
+```php
+{
+    "question_id" : int // 题目的id
+    "_token"      : string // csrf_token，可由{{csrf_token()}}得到，具体请看Laravel5.1文档。   
+}
+```
+
+返回数据：
+```php
+{
+    "resultCode" : int // 0为移除错误，1为移除成功
+}
 ```
