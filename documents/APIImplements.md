@@ -1,4 +1,4 @@
-1. Url: /questions
+1.Url: /questions
 
 控制器：QuestionController
 
@@ -67,7 +67,7 @@ questions[]{ // 所有的问题
 }
 ```
 
-2. Url: /collections/ Method: POST
+2.Url: /collections/ Method: POST
 
 添加试题到收集箱中
 
@@ -86,7 +86,7 @@ questions[]{ // 所有的问题
 } 
 ```
 
-3. Url: /collections/delete Method: POST
+3.Url: /collections/delete Method: POST
 
 从收集箱中取出试题
 
