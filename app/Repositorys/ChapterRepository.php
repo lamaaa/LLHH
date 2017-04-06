@@ -9,6 +9,7 @@ namespace App\Repositorys;
 
 use App\Models\Question;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class ChapterRepository
 {
@@ -43,18 +44,21 @@ class ChapterRepository
         if (Auth::check())
         {
             $collections = Auth::user()->collections;
+            $collectionIds = array();
             foreach ($collections as $collection)
             {
-                foreach ($questions as $question)
+                $collectionIds[] = $collection->question_id;
+            }
+
+            foreach ($questions as $question)
+            {
+                if (in_array($question->id, $collectionIds))
                 {
-                    if ($collection->question_id == $question->id)
-                    {
-                        $question->isAdd = 1;
-                    }
-                    else
-                    {
-                        $question->isAdd = 0;
-                    }
+                    $question->isAdd = 1;
+                }
+                else
+                {
+                    $question->isAdd = 0;
                 }
             }
         }
