@@ -103,8 +103,8 @@
 $(".collectStatus").click(function(){
     var status = document.getElementById("collStatus").value;
 
-    if( status === "add"){
-        document.getElementById("collStatus").setAttribute("value","delete");
+    if( status === 0){
+        // document.getElementById("collStatus").setAttribute("value","delete");
             var question_id = document.getElementById("questionId").value;
             $.ajaxSetup({
                 headers: {
@@ -118,16 +118,16 @@ $(".collectStatus").click(function(){
                 success:function(result){
                     if(result.resultCode==0)
                         alert("收入试题出错");
-                    else if(result.resultCode==2){
-                        document.getElementById("collectionBox").innerHTML="移出收集箱";
-                    }       
-                    else{
-                        document.getElementById("collectionBox").innerHTML="移出收集箱";
-                    }      
+                    // else if(result.resultCode==2){
+                    //     document.getElementById("collectionBox").innerHTML="移出收集箱";
+                    // }       
+                    // else{
+                    //     document.getElementById("collectionBox").innerHTML="移出收集箱";
+                    // }      
                 }   
             })
     }else{
-            document.getElementById("collStatus").setAttribute("value","add");
+            // document.getElementById("collStatus").setAttribute("value","add");
             var question_id = document.getElementById("questionId").value;
             $.ajaxSetup({
                 headers: {
@@ -141,9 +141,9 @@ $(".collectStatus").click(function(){
                 success:function(result){
                     if(result.resultCode==0)
                         alert("收入试题出错");
-                    else{
-                        document.getElementById("collectionBox").innerHTML="加入收集箱";
-                    }
+                    // else{
+                    //     document.getElementById("collectionBox").innerHTML="加入收集箱";
+                    // }
                 }
             });
         }

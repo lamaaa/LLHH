@@ -51,10 +51,8 @@
             <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
             <div class=" pull-right" style="width:800px">
             @foreach($questions as $question)
-
-                <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
-                    <div class="panel panel-default" >
-                        <div class="panel-heading">
+                 <div class="panel panel-default" >
+                    <div class="panel-heading">
                         <span class="lead">难度：
                             @for($countStar = 0; $countStar < $question->difficulty; $countStar++)
                                 <img src="/img/sts.gif" alt="a start">
@@ -65,28 +63,27 @@
                         </span>
                         <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
                         <button id="questionId" value="{{$question->id}}" class="btn  btn  btn-success btn-style pull-right collectStatus">
-                        <input id="collStatus" type="hidden" value="add">
-                            <span id="collectionBox">加入收集箱<span>
+                        <input id="collStatus" type="hidden" value="{{$question->isAdd}}">
+                            <span id="collectionBox">@if($question->isAdd == 1) 移出收集箱 @else 加入收集箱 @endif<span>
                         </button>
                     </div>
 
-                        <div class="panel-body">
-                            <p>
-                                {!!$question->description!!}
-                            </p>
-                        </div>
-                        <div class="panel-footer">
-                            <button type="button" class="btn btn-danger" title="答案"
-                                    data-container="body" data-toggle="popover"
-                                    data-content="{!! $question->answer !!}">答案
-                            </button>
-                        </div>
-                    </div><!--结束做题面板-->
-                    
-                @endforeach
+                    <div class="panel-body">
+                        <p>
+                             {!!$question->description!!}
+                         </p>
+                    </div>
+                    <div class="panel-footer">
+                        <button type="button" class="btn btn-danger" title="答案"
+                                data-container="body" data-toggle="popover"
+                                data-content="{!! $question->answer !!}">答案
+                         </button>
+                    </div>
+                </div>
+            @endforeach
                 {!! $questions->render() !!}
             </div>
-        </div>
+         </div>
     </div>
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="/js/myjs/myJsStyle.js"></script>
