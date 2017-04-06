@@ -51,22 +51,25 @@
             <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
             <div class=" pull-right" style="width:800px">
             @foreach($questions as $question)
+
                 <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
                     <div class="panel panel-default" >
                         <div class="panel-heading">
-                      <span class="lead">难度：
-                          @for($countStar = 0; $countStar < $question->difficulty; $countStar++)
-                              <img src="/img/sts.gif" alt="a start">
-                          @endfor
-                          @for($countStar = 0; $countStar < 5 - $question->difficulty; $countStar++)
-                              <img src="/img/nsts.gif" alt="a null start">
-                          @endfor
-                      </span>
-                            <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
-                            <button type="button" class="btn  btn-default  btn-success pull-right" data-toggle="button">
-                                <span>收集箱</span>
-                            </button>
-                        </div>
+                        <span class="lead">难度：
+                            @for($countStar = 0; $countStar < $question->difficulty; $countStar++)
+                                <img src="/img/sts.gif" alt="a start">
+                            @endfor
+                            @for($countStar = 0; $countStar < 5 - $question->difficulty; $countStar++)
+                                <img src="/img/nsts.gif" alt="a null start">
+                            @endfor
+                        </span>
+                        <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
+                        <button id="questionId" value="{{$question->id}}" class="btn  btn  btn-success btn-style pull-right collectStatus">
+                        <input id="collStatus" type="hidden" value="add">
+                            <span id="collectionBox">加入收集箱<span>
+                        </button>
+                    </div>
+
                         <div class="panel-body">
                             <p>
                                 {!!$question->description!!}
@@ -79,26 +82,13 @@
                             </button>
                         </div>
                     </div><!--结束做题面板-->
+                    
                 @endforeach
                 {!! $questions->render() !!}
             </div>
         </div>
     </div>
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>
-        $(function () {
-            $("[data-toggle='popover']").popover({
-                html: true,
-            });
-        });
-
-        window.onload = function(){
-            var theSelect = document.getElementsByName("difficulty");
-            var theForm = document.getElementsByName("difficultyForm");
-            theSelect[0].onchange=function () {
-                theForm[0].submit();
-            }
-        }
-    </script>
+    <script src="/js/myjs/myJsStyle.js"></script>
     <hr>
 @stop

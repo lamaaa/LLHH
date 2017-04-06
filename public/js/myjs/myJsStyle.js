@@ -51,54 +51,116 @@
     //     }
     // });        
    
-$("#collectButton").click(function(){
-    var question_id = document.getElementById("questionId").value;
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    $.ajax({
-        method: "POST",
-        url: "/collections",
-        data: {question_id: question_id},
-        success:function(result){
-            if(result.resultCode==0)
-                alert("收入试题出错");
-            else if(result.resultCode==2){
-                document.getElementById("collectionBox").innerHTML="移出收集箱";
-                document.getElementById("collectButton").setAttribute("id","deleteCollectButton");
-                alert("重复收入试题");
-            }
-                
-            else{
-                document.getElementById("collectionBox").innerHTML="移出收集箱";
-                document.getElementById("collectButton").setAttribute("id","deleteCollectButton");
-            }      
-        }
-    })
-})
+// $(".collectButton").click(function(){
+//     var question_id = document.getElementById("questionId").value;
+//     $.ajaxSetup({
+//         headers: {
+//             'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+//         }
+//     });
+//     $.ajax({
+//         method: "POST",
+//         url: "/collections",
+//         data: {question_id: question_id},
+//         success:function(result){
+//             if(result.resultCode==0)
+//                 alert("收入试题出错");
+//             else if(result.resultCode==2){
+//                 document.getElementById("collectionBox").innerHTML="移出收集箱";
+//             }       
+//             else{
+//                 document.getElementById("collectionBox").innerHTML="移出收集箱";
+//             }      
+//         }
+//     })
+// })
 
 
-$("#deleteCollectButton").click(function(){
-    var question_id = document.getElementById("questionId").value;
-     $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+// $("#deleteCollectButton").click(function(){
+//     var question_id = document.getElementById("questionId").value;
+//      $.ajaxSetup({
+//         headers: {
+//             'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+//         }
+//     });
+//     $.ajax({
+//         method: "POST",
+//         url:"/collections/delete",
+//         data: {question_id: question_id},
+//         success:function(result){
+//             if(result.resultCode==0)
+//                 alert("收入试题出错");
+//             else{
+//                 document.getElementById("collectionBox").innerHTML="加入收集箱";
+//                 document.getElementById("deleteCollectionButton").setAttribute("id","collectionButton");
+//             }
+//         }
+//     })
+// })
+
+
+//收集箱按钮，点击后加入或者移除收集箱
+$(".collectStatus").click(function(){
+    var status = document.getElementById("collStatus").value;
+
+    if( status === "add"){
+        document.getElementById("collStatus").setAttribute("value","delete");
+            var question_id = document.getElementById("questionId").value;
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                method: "POST",
+                url: "/collections",
+                data: {question_id: question_id},
+                success:function(result){
+                    if(result.resultCode==0)
+                        alert("收入试题出错");
+                    else if(result.resultCode==2){
+                        document.getElementById("collectionBox").innerHTML="移出收集箱";
+                    }       
+                    else{
+                        document.getElementById("collectionBox").innerHTML="移出收集箱";
+                    }      
+                }   
+            })
+    }else{
+            document.getElementById("collStatus").setAttribute("value","add");
+            var question_id = document.getElementById("questionId").value;
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                method: "POST",
+                url:"/collections/delete",
+                data: {question_id: question_id},
+                success:function(result){
+                    if(result.resultCode==0)
+                        alert("收入试题出错");
+                    else{
+                        document.getElementById("collectionBox").innerHTML="加入收集箱";
+                    }
+                }
+            });
         }
-    });
-    $.ajax({
-        method: "POST",
-        url:"/collections/delete",
-        data: {question_id: question_id},
-        success:function(result){
-            if(result.resultCode==0)
-                alert("收入试题出错");
-            else{
-                document.getElementById("collectionBox").innerHTML="加入收集箱";
-                document.getElementById("deleteCollectionButton").setAttribute("id","collectionButton");
+});
+
+
+
+        $(function () {
+            $("[data-toggle='popover']").popover({
+                html: true,
+            });
+        });
+
+        window.onload = function(){
+            var theSelect = document.getElementsByName("difficulty");
+            var theForm = document.getElementsByName("difficultyForm");
+            theSelect[0].onchange=function () {
+                theForm[0].submit();
             }
-            alert(result);
         }
-    })
-})

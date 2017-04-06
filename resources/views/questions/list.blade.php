@@ -87,12 +87,9 @@
                 @endfor
               </span> 
               <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
-              <span>
-
-              </span>
-              <input id="questionId" type="hidden" value="{{$question->id}}" />
-              <button id="collectButton" data-complete-text="已收集" class="btn  btn  btn-success btn-style pull-right">
-                  <span id="collectionBox">收集箱<span>
+              <button id="questionId" value="{{$question->id}}" class="btn  btn  btn-success btn-style pull-right collectStatus">
+              <input id="collStatus" type="hidden" value="add">
+                  <span id="collectionBox">加入收集箱<span>
               </button>
             </div>
 

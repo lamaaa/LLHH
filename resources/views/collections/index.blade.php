@@ -42,11 +42,13 @@
                                 </ul>
                             </li>
                         </ul>
-                        <div class="form-group">
-                            <input type="text" class="form-control " placeholder="搜索题目">
-                        </div>
-                        <button type="submit" class="btn btn-default">搜索</button>
-                        <a type="button" class="btn btn-info lead" href="#">组卷</a> 
+                        <from>
+                            <div class="form-group">
+                                <input type="text" class="form-control " placeholder="搜索题目">
+                            </div> 
+                                <button type="submit" class="btn btn-default">搜索</button>
+                                <a type="button" class="btn btn-info lead" href="#">组卷</a>
+                        </from>
                     </form>
                 </div>
             </div>        
@@ -73,8 +75,8 @@
                     &nbsp收藏时间：{{ $question->collected_at }}
               </span>
               <input id="questionId" type="hidden" value="{{$question->id}}" />
-              <button id="collectButton"  class="btn  btn  btn-success btn-style pull-right">
-                  <span id="collectionBox">收集箱</span>
+              <button id="deleteCollectButton"  class="btn  btn  btn-success btn-style pull-right">
+                  <span id="collectionBox">移出收集箱</span>
               </button>
             </div>
             <div class="panel-body">
