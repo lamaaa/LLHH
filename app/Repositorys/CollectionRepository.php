@@ -74,7 +74,7 @@ class CollectionRepository
         return false;
     }
 
-    public function getCollections($filter)
+    public function getCollections($filter, $sort)
     {
         $questions = array();
         $collections = Auth::user()->collections;
@@ -84,6 +84,32 @@ class CollectionRepository
             $questions[] = $collection->question;
         }
 
+        // 筛选题型和难度
+        $questions = $this->filterCollections($questions, $filter);
+        // 对题目进行排序
+        $questions = $this->sort($questions, $sort);
+        return $questions;
+    }
+
+    public function sort($questions, $sort)
+    {
+        usort($questions, function($question1, $question2) use ($sort){
+            $criteria = $sort['criteria'];
+            if ($sort['order'] == 'asc')
+            {
+                return $question1->$criteria > $question2->$criteria;
+            }
+            else
+            {
+                return $question2->$criteria > $question1->$criteria;
+            }
+        });
+        return $questions;
+    }
+
+    public function filterCollections($questions, $filter)
+    {
+        $search = $filter['search'];
         // 筛选难度
         switch ($filter['difficulty']){
             case 1:
@@ -99,6 +125,7 @@ class CollectionRepository
                 $difficulties = [1, 2, 3, 4, 5];
         }
 
+        // 筛选题型
         switch ($filter['type']){
             case 1:
                 $types = [1];
@@ -119,6 +146,13 @@ class CollectionRepository
         $questions = array_filter($questions, function($question) use ($types){
             return (in_array($question->type, $types));
         });
+
+        if ($search)
+        {
+            $questions = array_filter($questions, function($question) use ($search){
+                return strpos($question->description, $search);
+            });
+        }
 
         return $questions;
     }

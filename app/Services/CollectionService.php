@@ -32,7 +32,7 @@ class CollectionService
     {
         $difficulties = [1, 2, 3];
         $types = [1, 2, 3];
-        $filter = array();
+        $filter['search'] = $request->input('search');
         $filter['difficulty'] = 0;
         if ($request->has('difficulty') && in_array($request->input('difficulty'), $difficulties))
         {
@@ -50,8 +50,8 @@ class CollectionService
 
     public function getSort(Request $request)
     {
-        $sort['mistakeTimes'] = $request->input('mistakeTimesSort', 'asc');
-        $sort['collectedTime'] = $request->input('collectedTime', 'asc');
+        $sort['order'] = $request->input('order', 'asc');
+        $sort['criteria'] = $request->input('criteria', 'collected_at');
 
         return $sort;
     }
