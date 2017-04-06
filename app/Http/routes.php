@@ -48,7 +48,11 @@ Route::get('/testDelete', function(){
 
 //Aranl--
 Route::get('/tests', function() {
-    return view('tests/answer');
+    return view('tests.answer');
 });
 
+//试卷页路由
+Route::get('/papers', function(){
+    return view('thePaper.papers');
+});
 

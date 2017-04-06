@@ -28,7 +28,7 @@
             </div>
             <div class="panel-body">
               <p>
-                  已知双曲线（a＞0,b＞0）的两条渐近线均和圆C:相切，且双曲线的右焦点为圆C的圆心，则该双曲线的方程为
+                  已知双曲线（a＞0,b＞0）的两条渐近线均和圆C:相切
               </p>
             </div>
             <div class="panel-footer">
@@ -50,15 +50,17 @@
                       D
                     </label>
                   <span>
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                   <button type="button" class="btn-lg  btn-danger"  data-toggle="popover" title="Popover title" 
                           data-content="The answer">答案
                   </button>
+                              <!--<div class="panel-footer">
+                <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#answerButton{{$question->id}}" aria-expanded="false" 
+                    aria-controls="answerButton">
+                    答案</button>
+            </div>
+            <div class="collapse" id="answerButton{{$question->id}}">
+                {!! $question->answer !!}
+            </div>-->
               </div>
             </div>
           </div>       

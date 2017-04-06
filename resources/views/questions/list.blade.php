@@ -87,7 +87,7 @@
                 @endfor
               </span> 
               <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
-              <button id="questionId" value="{{$question->id}}" class="btn  btn  btn-success btn-style pull-right collectStatus">
+              <button id="button{{$question->id}}" value="{{$question->id}}" class="btn  btn  btn-success btn-style pull-right">
               <input id="collStatus" type="hidden" value="add">
                   <span id="collectionBox">加入收集箱<span>
               </button>
@@ -99,11 +99,13 @@
               </p>
             </div>
             <div class="panel-footer">
-               <button type="button" class="btn btn-danger" title="答案"  
-			         data-container="body" data-toggle="popover" 
-		          	data-content="{!! $question->answer !!}">答案
-              	</button>
+                <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#answerButton{{$question->id}}" aria-expanded="false" 
+                    aria-controls="answerButton">
+                    答案</button>
             </div>
+                <div class="collapse" id="answerButton{{$question->id}}">
+                      {!! $question->answer !!}
+                </div>
           </div><!--结束做题面板-->
              @endforeach
                 {!! $questions->render() !!}

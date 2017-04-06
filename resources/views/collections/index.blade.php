@@ -33,7 +33,7 @@
                             </li>
                             <li class="dropdown">
                                 <label for="">题型</label>
-                                <select name="type" id="type" class="form-control input" onchange="document.getElementById('screenForm').submit()">
+                                <select name="type" id="type" class="form-control input " onchange="document.getElementById('screenForm').submit()">
                                     <option value="0" @if($filter['type'] == 0) selected @endif>全部</option>
                                     <option value="1" @if($filter['type'] == 1) selected @endif>选择题</option>
                                     <option value="2" @if($filter['type'] == 2) selected @endif>填空题</option>
@@ -73,10 +73,15 @@
                 {!! $question->description !!}
             </div>
             <div class="panel-footer">
-                  <button type="button" class="btn btn-danger" data-toggle="popover" title="答案" 
-                          data-content="{!! $question->answer !!}">答案
-                  </button>
+                <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#answerButton{{$question->id}}" aria-expanded="false" 
+                    aria-controls="answerButton">
+                    答案</button>
             </div>
+            <div class="collapse" id="answerButton{{$question->id}}">
+                {!! $question->answer !!}
+            </div>
+
+
         </div><!--结束做题面板-->
          @endforeach
         {{ $questions->render() }}
