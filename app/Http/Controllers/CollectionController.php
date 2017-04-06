@@ -6,9 +6,6 @@ use App\Repositorys\CollectionRepository;
 use App\Services\CollectionService;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
 class CollectionController extends Controller
 {
     protected $collectionRepository;
@@ -25,9 +22,11 @@ class CollectionController extends Controller
 
     public function index(Request $request)
     {
-        $collectedQuestions = $this->collectionRepository->getCollectedQuestions();
-        $questions = $this->collectionService->paginate($request,$collectedQuestions);
-        return view('collections.index', compact('questions'));
+        $filter = $this->collectionService->getFilter($request);
+        $sort = $this->collectionService->getSort($request);
+        $collections = $this->collectionRepository->getCollections($filter);
+        $questions = $this->collectionService->paginate($request,$collections);
+        return view('collections.index', compact('questions', 'filter', 'sort'));
     }
 
     public function store(Request $request)

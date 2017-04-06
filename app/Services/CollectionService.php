@@ -27,4 +27,32 @@ class CollectionService
             ['path' => $request->url(), 'query' => $request->query()]
         );
     }
+
+    public function getFilter(Request $request)
+    {
+        $difficulties = [1, 2, 3];
+        $types = [1, 2, 3];
+        $filter = array();
+        $filter['difficulty'] = 0;
+        if ($request->has('difficulty') && in_array($request->input('difficulty'), $difficulties))
+        {
+            $filter['difficulty'] = $request->input('difficulty');
+        }
+
+        $filter['type'] = 0;
+        if ($request->has('type') && in_array($request->input('type'), $types))
+        {
+            $filter['type'] = $request->input('type');
+        }
+
+        return $filter;
+    }
+
+    public function getSort(Request $request)
+    {
+        $sort['mistakeTimes'] = $request->input('mistakeTimesSort', 'asc');
+        $sort['collectedTime'] = $request->input('collectedTime', 'asc');
+
+        return $sort;
+    }
 }

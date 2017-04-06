@@ -16,31 +16,30 @@
                                 <span><strong>排序：</strong></span>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">收藏时间</a>
+                                <a href="javascript:void(0)" onclick="collectedTimeSort()">收藏时间</a>
+                                <input type="hidden" id="" name="collectedTimeSort" value="{{$sort['collectedTime']}}">
                             </li>
                             <li>
-                                <a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">错误次数</a>
+                                <a href="javascript:void(0)" onclick="mistakeTimesSort()">错误次数</a>
+                                <input type="hidden" name="mistakeTimesSort" value="{{$sort['mistakeTimes']}}">
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                aria-haspopup="true" aria-expanded="false">难度<span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">全部</a></li>
-                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">容易</a></li>
-                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">中等</a></li>
-                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">困难</a></li>
-                                </ul>
+                                <label for="">难度</label>
+                                <select name="difficulty" id="difficulty" class="form-control input" onchange="document.getElementById('screenForm').submit()" >
+                                    <option value="0" @if($filter['difficulty'] == 0) selected @endif>全部</option>
+                                    <option value="1" @if($filter['difficulty'] == 1) selected @endif>容易</option>
+                                    <option value="2" @if($filter['difficulty'] == 2) selected @endif>中等</option>
+                                    <option value="3" @if($filter['difficulty'] == 3) selected @endif>困难</option>
+                                </select>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                aria-haspopup="true" aria-expanded="false">题型<span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">选择题</a></li>
-                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">计算题</a></li>
-                                    <li><a href="javascript:void(0)" onclick="document.getElementById('screenForm').submit()">应用题</a></li>
-                                </ul>
+                                <label for="">题型</label>
+                                <select name="type" id="type" class="form-control input" onchange="document.getElementById('screenForm').submit()">
+                                    <option value="0" @if($filter['type'] == 0) selected @endif>全部</option>
+                                    <option value="1" @if($filter['type'] == 1) selected @endif>选择题</option>
+                                    <option value="2" @if($filter['type'] == 2) selected @endif>填空题</option>
+                                    <option value="3" @if($filter['type'] == 3) selected @endif>计算题</option>
+                                </select>
                             </li>
                         </ul>
                         <div class="form-group">
@@ -53,9 +52,6 @@
             </div>
 
         </nav>
-
-
-
 
     <!--显示被筛选的试题！默认显示全部-->
         <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
@@ -98,28 +94,13 @@
                 });
             });
 
-            window.onload = function(){
-                var theSelect = document.getElementsByName("type");
-                var theForm = document.getElementsByName("sortForm");
-                theSelect[0].onchange=function () {
-                    theForm[0].submit();
-                }
+            function mistakeTimesSort(){
+                alert('hello');
             }
-          </script>
 
-        <!-- 收集箱 ！-->
-          <script>
-              var status = 0;//初始化被收集的状态
-              function saveToCollectionBox(){
-                  var btn = $("#collectButton ");
+            function collectedTimeSort(){
+                alert('world');
+            }
 
-                  if(status == 0){
-                    btn.button('complete');
-                    status = 1; //被收集
-                  }else{
-                    btn.button('reset');
-                    status = 0; //没被收集
-                  }
-              }
           </script>
 @stop

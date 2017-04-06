@@ -11,25 +11,25 @@ use App\Models\Question;
 
 class ChapterRepository
 {
-    public function questions($chapter_id, $difficutly)
+    public function questions($chapter_id, $difficulty)
     {
-        $difficutlies = array();
-        switch ($difficutly){
+        $difficulties = array();
+        switch ($difficulty){
             case 0:
-                $difficutlies = [1, 2, 3, 4, 5];
+                $difficulties = [1, 2, 3, 4, 5];
                 break;
             case 1:
-                $difficutlies = [1, 2];
+                $difficulties = [1, 2];
                 break;
             case 2:
-                $difficutlies = [3, 4];
+                $difficulties = [3, 4];
                 break;
             case 3:
-                $difficutlies = [5];
+                $difficulties = [5];
                 break;
         }
         return Question::where('chapter_id', $chapter_id)
-            ->whereIn('difficulty', $difficutlies)
+            ->whereIn('difficulty', $difficulties)
             ->paginate(10);
     }
 }

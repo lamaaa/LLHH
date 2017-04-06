@@ -11,6 +11,7 @@ use App\Models\Collection;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class CollectionRepository
 {
@@ -73,18 +74,7 @@ class CollectionRepository
         return false;
     }
 
-    public function getCollectionBox()
-    {
-        $collectionBox = CollectionBox::where('user_id', Auth::user()->id)->first();
-        if (!$collectionBox)
-        {
-            $collectionBox = CollectionBox::create(['user_id' => Auth::user()->id]);
-        }
-
-        return $collectionBox;
-    }
-
-    public function getCollectedQuestions()
+    public function getCollections($filter)
     {
         $questions = array();
         $collections = Auth::user()->collections;
@@ -93,6 +83,43 @@ class CollectionRepository
             $collection->question->collected_at = $collection->created_at;
             $questions[] = $collection->question;
         }
+
+        // 筛选难度
+        switch ($filter['difficulty']){
+            case 1:
+                $difficulties = [1, 2];
+                break;
+            case 2:
+                $difficulties = [3, 4];
+                break;
+            case 3:
+                $difficulties = [5];
+                break;
+            default:
+                $difficulties = [1, 2, 3, 4, 5];
+        }
+
+        switch ($filter['type']){
+            case 1:
+                $types = [1];
+                break;
+            case 2:
+                $types = [2];
+                break;
+            case 3:
+                $types = [3];
+                break;
+            default:
+                $types = [1, 2, 3];
+        }
+        $questions = array_filter($questions, function($question) use ($difficulties) {
+            return (in_array($question->difficulty, $difficulties));
+        });
+
+        $questions = array_filter($questions, function($question) use ($types){
+            return (in_array($question->type, $types));
+        });
+
         return $questions;
     }
 }
