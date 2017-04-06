@@ -27,7 +27,7 @@
 
         <div class="container marketing" style="margin-top:30px">
             <!--排序方式选项-->
-            <div class="radio pull-right" style="width:700px">
+            <!--<div class="radio pull-right" style="width:700px">
                 <span class="lead">排序方式：&nbsp&nbsp&nbsp</span>
                 <label for="male" style="margin-top:8px">
                     <input id="1"  class="#" type="radio" value="option1" onclick="checked" name="orderby" >
@@ -46,7 +46,52 @@
                         <option value="3" @if($difficulty==3) selected @endif>困难</option>
                     </select>
                 </form>
-            </div><!--结束方式选项-->
+            </div>结束方式选项-->
+                            <!--筛选导航栏!-->
+        <nav class="navbar navbar-default pull-right" style="width:800px">
+            <div class="container">
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-left">
+                        <li>
+                            <a href="#" class="navbar-brand"><span><strong>排序：</strong></span></a>
+                        </li>
+                        <li>
+                            <a href="#">按入库时间</a>
+                        </li>
+                        <li>
+                            <a href="#">按被收集次数</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false">难度<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">全部</a></li>
+                                <li><a href="#">容易</a></li>
+                                <li><a href="#">中等</a></li>
+                                <li><a href="#">困难</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false">题型<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">选择题</a></li>
+                                <li><a href="#">计算题</a></li>
+                                <li><a href="#">应用题</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form ">
+                        <div class="form-group">
+                            <input type="text" class="form-control " placeholder="搜索题目">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+                </div>
+            </div>        
+        </nav><!--结束导航栏-->
 
             <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
             <div class=" pull-right" style="width:800px">
@@ -62,10 +107,11 @@
                             @endfor
                         </span>
                         <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
-                        <button id="questionId" value="{{$question->id}}" class="btn  btn  btn-success btn-style pull-right collectStatus">
-                        <input id="collStatus" type="hidden" value="{{$question->isAdd}}">
-                            <span id="collectionBox">@if($question->isAdd == 1) 移出收集箱 @else 加入收集箱 @endif<span>
+                        <button id="button{{$question->id}}" value="{{$question->id}}" class="btn @if($question->isAdd) btn-danger @else btn-success @endif btn-style pull-right"
+                             onclick="changeQuestionState({{$question->id}})">
+                            <span id="">@if($question->isAdd == 1) 移出收集箱 @else 加入收集箱 @endif<span>
                         </button>
+                        <input id="input{{$question->id}}" type="hidden" value="{{$question->isAdd}}">
                     </div>
 
                     <div class="panel-body">
