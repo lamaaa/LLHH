@@ -104,3 +104,23 @@ questions[]{ // 所有的问题
     "resultCode" : int // 0为移除错误，1为移除成功
 }
 ```
+
+4. Url: /records/ Method: POST
+ 
+增加该用户的做题记录
+
+发送数据：
+```php
+{
+    "question_id" : int // 题目的id
+    "isRight"     : boolean // true为做对该题，false为做错该题
+    "_token"      : token // csrf_token, 可由{{csrf_token}}得到
+}
+```
+
+返回数据：
+```php
+{
+    "resultCode": : int // 0为添加做题记录失败，1为添加做题记录成功
+}
+```
