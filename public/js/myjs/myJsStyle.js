@@ -155,6 +155,8 @@
 //         }
 // });
 
+
+//改变收集箱按钮的样式
 function changeQuestionState(question_id)
 {
     
@@ -162,7 +164,7 @@ function changeQuestionState(question_id)
     var button_id = document.getElementById("button" + question_id).id;
    
     if( status == 0){
-        $("#" + button_id).addClass("btn btn-danger");
+        $("#" + button_id).addClass("btn-danger");
         document.getElementById("input" + question_id).value = 1;
             $.ajaxSetup({
                 headers: {
@@ -207,6 +209,60 @@ function changeQuestionState(question_id)
         }
 
 }
+
+//用Ajax渲染对错按钮,点击后给后台传数据，做对或者做错
+function trueBtn(question_id){
+        //获取当前试题对象
+        var btn_state =document.getElementById("trueBtn"+question_id);
+        //试题绑定的Id
+        var btn_id = btn_state.id;
+        alert(question_id);
+        $("#"+btn_id).addClass("btn-success");
+        $.ajaxSetup({
+            headers:{
+                'X-CSRF-TOKEN' :$('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            method:"POST",
+            url:"/records",
+            data:{question_id: question_id,isRight: true},
+            success:function(result){
+                if(result.resultCode==0)
+                    alert("出了一些错误");
+                else{
+                   
+                }
+            }
+        });
+}
+
+function falseBtn(question_id){
+    //获取当前试题对象
+    var btn_state =document.getElementById("falseBtn"+question_id);
+    //试题绑定的Id
+    var btn_id = btn_state.id;
+
+     $("#" + btn_id).addClass("btn-danger");
+    $.ajaxSetup({
+           headers: {
+               'X-CSRF-TOKEN' :$('meta[name="csrf-token"]').attr('content')
+          }
+       });
+     $.ajax({
+          method:"POST",
+          url:"/records",
+         data: {question_id: question_id,isRight: false},
+         success:function(result){
+             if(result.resultCode==0)
+                alert("出现了一些错误");
+            else{        
+                }
+         }
+     });
+}
+
+
 
 
 

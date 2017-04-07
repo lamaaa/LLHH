@@ -107,8 +107,8 @@
                             @endfor
                         </span>
                         <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
-                        <button id="button{{$question->id}}" value="{{$question->id}}" class="btn @if($question->isAdd) btn-danger @else btn-success @endif btn-style pull-right"
-                             onclick="changeQuestionState({{$question->id}})">
+                        <button id="button{{$question->id}}" onclick="changeQuestionState({{$question->id}})"
+                        class="btn @if($question->isAdd) btn-danger @else btn-success @endif btn-style pull-right">
                             <span id="">@if($question->isAdd == 1) 移出收集箱 @else 加入收集箱 @endif<span>
                         </button>
                         <input id="input{{$question->id}}" type="hidden" value="{{$question->isAdd}}">
@@ -120,9 +120,16 @@
                          </p>
                     </div>
                     <div class="panel-footer">
+                        <!--答案按钮-->
                         <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#answerButton{{$question->id}}" aria-expanded="false" 
                          aria-controls="answerButton">
-                            答案</button>
+                         答案</button>
+                         <!--对错按钮-->
+
+                        <button type="button" class="btn btn-default pull-right" value="" id="trueBtn{{$question->id}}" onclick="falseBtn({{$question->id}})" >
+                         错误</button> 
+                        <button type="button" class="btn btn-default pull-right" value="" id="falseBtn{{$question->id}}" onclick="trueBtn({{$question->id}})" >
+                         正确</button>                       
                      </div>
                     <div class="collapse" id="answerButton{{$question->id}}">
                         {!! $question->answer !!}
