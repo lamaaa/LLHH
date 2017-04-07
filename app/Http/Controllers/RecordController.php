@@ -14,6 +14,7 @@ class RecordController extends Controller
 
     public function __construct(RecordRepository $recordRepository)
     {
+        $this->middleware('auth');
         $this->recordRepository = $recordRepository;
     }
 
