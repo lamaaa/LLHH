@@ -105,7 +105,7 @@ questions[]{ // 所有的问题
 }
 ```
 
-4. Url: /records/ Method: POST
+4.Url: /records/ Method: POST
  
 增加该用户的做题记录
 
