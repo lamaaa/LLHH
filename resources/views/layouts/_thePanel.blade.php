@@ -12,17 +12,22 @@
                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
               </span>
-              <button type="button" class="btn  btn-lg  btn-success " data-toggle="button">
+              <button type="button" class="btn  btn  btn-success pull-right" data-toggle="button">
                   <span>收集箱</span>
               </button>
             </div>
             <div class="panel-body">
               <p>
                   已知双曲线（a＞0,b＞0）的两条渐近线均和圆C:相切，且双曲线的右焦点为圆C的圆心，则该双曲线的方程为
+                  已知双曲线（a＞0,b＞0）的两条渐近线均和圆C:相切，且双曲线的右焦点为圆C的圆心，则该双曲线的方程为
+                  已知双曲线（a＞0,b＞0）的两条渐近线均和圆C:相切，且双曲线的右焦点为圆C的圆心，则该双曲线的方程为
+                  已知双曲线（a＞0,b＞0）的两条渐近线均和圆C:相切，且双曲线的右焦点为圆C的圆心，则该双曲线的方程为
+                  已知双曲线（a＞0,b＞0）的两条渐近线均和圆C:相切，且双曲线的右焦点为圆C的圆心，则该双曲线的方程为
+                  
               </p>
             </div>
             <div class="panel-footer">
-              <div class="radio" >
+              <!--<div class="radio" >
                     <label for="answerA" >&nbsp&nbsp&nbsp&nbsp
                       <input id="1"  class="#" type="radio" value="option1" onclick="checked" name="answerA" >
                     A
@@ -39,16 +44,9 @@
                       <input id="4"  class="#" type="radio" value="option4" onclick="checked" name="answerB">
                       D
                     </label>
-                  <span>
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  <button type="button" class="btn-lg  btn-danger"  data-toggle="popover" title="Popover title" 
+                  <span>-->
+                  <button type="button" class="btn  btn-danger "  data-toggle="popover" title="Popover title" 
                           data-content="The answer">答案
                   </button>
-              </div>
             </div>
           </div>       

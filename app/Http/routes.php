@@ -51,12 +51,12 @@ Route::get('/testRecord', function(){
     return view('tests.testRecord');
 });
 
-//Aranl--
+//测试页
 Route::get('/tests', function() {
     return view('tests.answer');
 });
 
-//试卷页路由
+//试卷页
 Route::get('/papers', function(){
     return view('thePaper.papers');
 });

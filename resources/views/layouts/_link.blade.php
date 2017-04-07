@@ -40,17 +40,18 @@
             @yield('content')
         
 
-            <!--被注释掉的.js文件-->
-        <!--<script src="js/app.js"></script>-->
-
-            <!-- Bootstrap core JavaScript
+             <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load </script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/js/assets/vendor/jquery.min.js"><\/script>')</script>
     <script src="/js/dist/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="/js/assets/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/assets/ie10-viewport-bug-workaround.js"></script>
+    <!--答案弹框!而引入的工具js-->
+    <script src="/js/assets/tooltip.js"></script>  
+    <script src="/js/assets/popover.js"></script>       
     </body>
 </html>

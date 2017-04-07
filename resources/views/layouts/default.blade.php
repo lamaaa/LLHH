@@ -35,8 +35,6 @@
             @yield('content')
             @include(('layouts._footer'))
 
-            <!--被注释掉的.js文件-->
-        <!--<script src="js/app.js"></script>-->
 
             <!-- Bootstrap core JavaScript
     ================================================== -->

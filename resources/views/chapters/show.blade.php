@@ -104,11 +104,12 @@
                          aria-controls="answerButton">
                          答案</button>
                          <!--对错按钮-->
-                         <button type="button" class="btn btn-default pull-right" value="" id="falseBtn{{$question->id}}" onclick="addWrongRecord({{$question->id}})" >
+                         <button type="button" class="btn btn-default pull-right"  data-toggle="modal" data-target="#wrongModal"
+                          id="falseBtn{{$question->id}}" onclick="addWrongRecord({{$question->id}})" >
                          错误</button> 
-                        <button type="button" class="btn btn-default pull-right" value="" id="trueBtn{{$question->id}}" onclick="addRightRecord({{$question->id}})" >
+                        <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#rightModal"
+                         id="trueBtn{{$question->id}}" onclick="addRightRecord({{$question->id}})" >
                          正确</button> 
- 
                      </div>
                     <div class="collapse" id="answerButton{{$question->id}}">
                         {!! $question->answer !!}
@@ -117,6 +118,9 @@
             @endforeach
                 {!! $questions->render() !!}
             </div>
+            <!--引入做对模态框和做错模态框-->
+            @include('chapters.rightModal')
+            @include('chapters.wrongModal')
          </div>
     </div>
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
