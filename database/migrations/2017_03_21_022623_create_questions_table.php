@@ -18,6 +18,7 @@ class CreateQuestionsTable extends Migration
             $table->integer('difficulty');
             $table->string('chapter_id')->index();
             $table->string('source');
+            $table->integer('collected_times')->default(0);
             $table->text('answer');
             $table->string('type');
             $table->integer('mistake_times')->default(0);

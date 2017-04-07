@@ -211,12 +211,13 @@ function changeQuestionState(question_id)
 }
 
 //用Ajax渲染对错按钮,点击后给后台传数据，做对或者做错
-function trueBtn(question_id){
+function addRightRecord(question_id)
+{
         //获取当前试题对象
         var btn_state =document.getElementById("trueBtn"+question_id);
         //试题绑定的Id
         var btn_id = btn_state.id;
-        alert(question_id);
+        
         $("#"+btn_id).addClass("btn-success");
         $.ajaxSetup({
             headers:{
@@ -237,7 +238,7 @@ function trueBtn(question_id){
         });
 }
 
-function falseBtn(question_id){
+function addWrongRecord(question_id){
     //获取当前试题对象
     var btn_state =document.getElementById("falseBtn"+question_id);
     //试题绑定的Id
@@ -271,11 +272,3 @@ function falseBtn(question_id){
                 html: true,
             });
         });
-
-        window.onload = function(){
-            var theSelect = document.getElementsByName("difficulty");
-            var theForm = document.getElementsByName("difficultyForm");
-            theSelect[0].onchange=function () {
-                theForm[0].submit();
-            }
-        }
