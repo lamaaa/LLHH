@@ -74,6 +74,15 @@ class CollectionRepository
         return false;
     }
 
+    public function destroy($question_id)
+    {
+        Collection::where('user_id', Auth::user()->id)
+            ->where('question_id', $question_id)
+            ->delete();
+
+        return redirect()->back();
+    }
+
     public function getCollections($filter, $sort)
     {
         $questions = array();

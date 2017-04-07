@@ -40,4 +40,9 @@ class CollectionController extends Controller
         $resultCode = $this->collectionRepository->deleteCollection($request);
         return $resultCode;
     }
+
+    public function destroy($question_id)
+    {
+        return $this->collectionRepository->destroy($question_id);
+    }
 }
