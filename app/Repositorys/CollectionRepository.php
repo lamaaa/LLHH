@@ -26,6 +26,9 @@ class CollectionRepository
         {
             if ($collection->delete())
             {
+                $collectedQuestion = Question::findOrFail($question_id);
+                $collectedQuestion->collected_times--;
+                $collectedQuestion->save();
                 $this->resultCode = ['resultCode' => 1];
                 return $this->resultCode;
             }
@@ -65,6 +68,9 @@ class CollectionRepository
                 'user_id'  =>  Auth::user()->id,
                 'question_id'       =>  $question_id
             ]);
+        $collectedQuestion = Question::findOrFail($question_id);
+        $collectedQuestion->collected_times++;
+        $collectedQuestion->save();
         if ($collection)
         {
             $this->resultCode = ['resultCode' => 1];
@@ -79,6 +85,10 @@ class CollectionRepository
         Collection::where('user_id', Auth::user()->id)
             ->where('question_id', $question_id)
             ->delete();
+
+        $collectedQuestion = Question::findOrFail($question_id);
+        $collectedQuestion->collected_times--;
+        $collectedQuestion->save();
 
         return redirect()->back();
     }

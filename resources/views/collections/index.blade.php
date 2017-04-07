@@ -13,10 +13,10 @@
                                 <span><strong>排序：</strong></span>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" id="collected_at" onclick="sort(this.id)">收藏时间</a>
+                                <a href="javascript:void(0);" id="collected_at" onclick="sort(this.id)">收藏时间</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" id="mistake_times" onclick="sort(this.id)">错误次数</a>
+                                <a href="javascript:void(0);" id="mistake_times" onclick="sort(this.id)">错误次数</a>
                             </li>
                             <input type="hidden" value="{{$sort['order']}}" name="order" id="order">
                             <input type="hidden" value="{{$sort['criteria']}}" name="criteria" id="criteria">
@@ -85,7 +85,6 @@
             </div>
         </div><!--结束做题面板-->
          @endforeach
-
         {{ $questions->render() }}
     </div>
 
