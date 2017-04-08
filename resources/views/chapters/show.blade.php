@@ -104,10 +104,10 @@
                          aria-controls="answerButton">
                          答案</button>
                          <!--对错按钮-->
-                         <button type="button" class="btn btn-default pull-right"  data-toggle="modal" data-target="#wrongModal{{$question->id}}"
+                         <button type="button" class="btn btn-default pull-right"  data-toggle="modal"
                           id="falseBtn{{$question->id}}" onclick="addWrongRecord({{$question->id}})" >
                          错误</button> 
-                        <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#rightModal"
+                        <button type="button" class="btn btn-default pull-right" data-toggle="modal"
                          id="trueBtn{{$question->id}}" onclick="addRightRecord({{$question->id}})" >
                          正确</button> 
                      </div>

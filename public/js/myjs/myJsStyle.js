@@ -232,7 +232,7 @@ function addRightRecord(question_id)
                 if(result.resultCode==0)
                     alert("服务端出了一些错误");
                 else{
-                   
+                    $('#rightModal').modal({keyboard: true});
                 }
             }
         });
@@ -257,7 +257,9 @@ function addWrongRecord(question_id){
          success:function(result){
              if(result.resultCode==0)
                 alert("服务端出现了一些错误");
-            else{        
+            else{
+                 document.getElementById("mistake_times").innerHTML=result.mistake_times;
+                 $('#wrongModal').modal({keyboard: true});
                 }
          }
      });

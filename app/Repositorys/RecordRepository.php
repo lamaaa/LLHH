@@ -46,7 +46,11 @@ class RecordRepository
 
         if ($record)
         {
-            $this->resultCode = ['resultCode' => 1];
+            $mistake_times = Record::where('user_id', Auth::user()->id)
+                                    ->where('question_id', $question_id)
+                                    ->where('isRight', false)
+                                    ->count();
+            $this->resultCode = ['resultCode' => 1, 'mistake_times' => $mistake_times];
             return $this->resultCode;
         }
 
