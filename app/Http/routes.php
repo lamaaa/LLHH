@@ -53,6 +53,12 @@ Route::get('/testpapers', function(){
 });
 
 //错题页
-Route::get('/testwrongQ', function(){
+Route::get('/testwrong', function(){
     return view('questions.wrongQuestions');
+});
+
+
+//做过的题页面
+Route::get('/testDone',function(){
+    return view('questions.doneQuestions');
 });
