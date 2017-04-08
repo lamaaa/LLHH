@@ -18,7 +18,7 @@
 
                     <div class="form-group">
                         <label for="email" class="sr-only">邮箱：</label>
-                        <input type="text" name="email" class="form-control" placeholder="可以用于登录和找回密码" required value="{{ old('email') }}">
+                        <input type="text" name="email" class="form-control" placeholder="请设置邮箱" required value="{{ old('email') }}">
                     </div>
 
                     <div class="form-group">
@@ -39,7 +39,7 @@
           <!-- FOOTER -->
       <footer style="margin-top:800px">
           <hr>
-        <p class="text-center">&copy; Copyright 2016 -LLHH项目小组- 林浩阳 林键燃 何瑞博 何玥  </br>
+        <p class="text-center">&copy; Copyright 2016 -LLHH项目小组- 林浩阳 林键燃 何瑞博 何玥  <br>
             <p class="text-center"> 
                 <a href="#" >粤ICP14151106号</a>
             </p>  

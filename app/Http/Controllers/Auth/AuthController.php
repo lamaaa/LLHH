@@ -74,10 +74,10 @@ class AuthController extends Controller
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = '18924142715@163.com';
-        $name = 'Aranl';
+        $from = 'yang-19905427@163.com';
+        $name = 'Lam';
         $to = $user->email;
-        $subject = '感谢注册Sample应用！请确认您的邮箱。';
+        $subject = '感谢注册LLHH习题库管理系统！请确认您的邮箱。';
 
         Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject){
             $message->from($from, $name)->to($to)->subject($subject);

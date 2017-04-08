@@ -41,6 +41,7 @@ class ChapterController extends Controller
         $difficulty = $this->chapterService->getDifficulty($request);
         $modules = $this->moduleRepository->all();
         $questions = $this->chapterRepository->getQuestions($chapter_id, $difficulty);
-        return view('chapters.show', compact(['modules', 'questions', 'difficulty', 'chapter_id']));
+        $active = 'chapters';
+        return view('chapters.show', compact(['modules', 'questions', 'difficulty', 'chapter_id', 'active']));
     }
 }
