@@ -18,4 +18,9 @@ class IndexRepository
             ->get();
         return $fallibleQuestions;
     }
+
+    public function getPopularQuestions($num)
+    {
+        
+    }
 }
