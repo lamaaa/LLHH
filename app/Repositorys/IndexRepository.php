@@ -7,7 +7,9 @@
  */
 namespace App\Repositorys;
 
+use App\Models\Collection;
 use App\Models\Question;
+use Illuminate\Support\Facades\DB;
 
 class IndexRepository
 {
@@ -21,6 +23,19 @@ class IndexRepository
 
     public function getPopularQuestions($num)
     {
+        $collections = Collection::select(DB::raw('*, count(*) as collected_times'))
+                                ->groupBy('question_id')
+                                ->orderBy('collected_times', 'desc')
+                                ->take($num)
+                                ->get();
 
+        $popularQuestions = array();
+        foreach ($collections as $collection)
+        {
+            $collection->question->collected_times = $collection->collected_times;
+            $popularQuestions[] = $collection->question;
+        }
+
+        return $popularQuestions;
     }
 }
