@@ -8,6 +8,7 @@
 namespace App\Repositorys;
 
 use App\Models\Question;
+use App\Models\Record;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
@@ -33,6 +34,15 @@ class ChapterRepository
         $questions = Question::where('chapter_id', $chapter_id)
             ->whereIn('difficulty', $difficulties)
             ->paginate(10);
+        // 记录每道题错误次数
+        foreach ($questions as $question)
+        {
+            $thisUser_mistake_times = Record::where('user_id', Auth::user()->id)->where('question_id', $question->id)
+                                                    ->where('isRight', false)
+                                                    ->count();
+
+            $question->thisUser_mistake_times = $thisUser_mistake_times;
+        }
 
         $questions = $this->setCollections($questions);
 

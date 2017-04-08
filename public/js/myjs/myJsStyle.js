@@ -227,10 +227,10 @@ function addRightRecord(question_id)
         $.ajax({
             method:"POST",
             url:"/records",
-            data:{question_id: question_id, isRight: true},
+            data:{question_id: question_id, isRight: 1},
             success:function(result){
                 if(result.resultCode==0)
-                    alert("出了一些错误");
+                    alert("服务端出了一些错误");
                 else{
                    
                 }
@@ -253,10 +253,10 @@ function addWrongRecord(question_id){
      $.ajax({
           method:"POST",
           url:"/records",
-         data: {question_id: question_id, isRight: false},
+         data: {question_id: question_id, isRight: 0},
          success:function(result){
              if(result.resultCode==0)
-                alert("出现了一些错误");
+                alert("服务端出现了一些错误");
             else{        
                 }
          }

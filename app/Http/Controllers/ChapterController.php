@@ -19,6 +19,7 @@ class ChapterController extends Controller
                                 ModuleRepository $moduleRepository,
                                 ChapterService $chapterService)
     {
+        $this->middleware('auth');
         $this->chapterRepository = $chapterRepository;
         $this->moduleRepository = $moduleRepository;
         $this->chapterService = $chapterService;

@@ -11,6 +11,7 @@ use App\Models\Question;
 use App\Models\Record;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class RecordRepository
 {
@@ -29,11 +30,19 @@ class RecordRepository
             return $this->resultCode;
         }
 
+        // 创建一条做题记录
         $record = Record::create([
             'user_id'   =>  Auth::user()->id,
             'question_id'   =>  $question_id,
             'isRight'     =>  $isRight
         ]);
+
+        // 如果做错的话，就更新该题被做错的次数。
+        if (!$isRight)
+        {
+            $question->mistake_times++;
+            $question->save();
+        }
 
         if ($record)
         {
