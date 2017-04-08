@@ -24,20 +24,20 @@
                 </div>-->
                 <div class="checkbox">
                     <label class="checkbox-inline">
-                        <input type="text">
-                    </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="option1" id="part1"> <span class="lead">选修1&nbsp&nbsp</span>
+                        <input type="checkbox" value="option1" id="part1"> <span class="lead">必修一&nbsp&nbsp</span>
                     </label>
                     <label class="checkbox-inline">                   
-                        <input type="checkbox" value="option2" id="part2"><span class="lead">选修2&nbsp&nbsp</span>
+                        <input type="checkbox" value="option2" id="part2"><span class="lead">选修1&nbsp&nbsp</span>
                     </label> 
                     <label class="checkbox-inline">                  
-                        <input type="checkbox" value="option3" id="part3"><span class="lead">选修3&nbsp&nbsp</span>
+                        <input type="checkbox" value="option3" id="part3"><span class="lead">选修2&nbsp&nbsp</span>
                     </label>   
                     <label class="checkbox-inline">                 
-                        <input type="checkbox" value="option4" id="part4"><span class="lead">选修4&nbsp&nbsp</span>
-                    </label>                                         
+                        <input type="checkbox" value="option4" id="part4"><span class="lead">选修3&nbsp&nbsp</span>
+                    </label>  
+                    <label class="checkbox-inline">                 
+                        <input type="checkbox" value="option5" id="part5"><span class="lead">选修4&nbsp&nbsp</span>
+                    </label>                                        
                 </div>   
             </div>
         </div>

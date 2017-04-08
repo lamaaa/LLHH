@@ -48,11 +48,11 @@ Route::get('/tests', function() {
 
 
 //试卷页
-Route::get('/papers', function(){
+Route::get('/testpapers', function(){
     return view('thePaper.papers');
 });
 
 //错题页
-Route::get('/wrongQ', function(){
+Route::get('/testwrongQ', function(){
     return view('questions.wrongQuestions');
 });
