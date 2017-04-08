@@ -38,24 +38,11 @@ Route::resource('/collections', 'CollectionController');
 Route::post('/collections/delete', 'CollectionController@delete')->name('collections.delete');
 // 做题记录
 Route::resource('/records', 'RecordController');
-
-Route::get('/testAdd', function(){
-    return view('tests.testAdd');
-});
-Route::get('/testDelete', function(){
-    return view('tests.testDelete');
-});
-Route::get('/testRecord', function(){
-    return view('tests.testRecord');
-});
+// 试卷
+Route::resource('/papers', 'PaperController');
 
 //测试页
 Route::get('/tests', function() {
     return view('tests.answer');
-});
-
-//试卷页
-Route::get('/papers', function(){
-    return view('thePaper.papers');
 });
 

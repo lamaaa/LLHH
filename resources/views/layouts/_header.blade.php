@@ -12,10 +12,11 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav">
-              <li class="active"><a href="{{url()}}">首页</a></li>
-              <li><a href="{{ route('chapters.index') }}">题库</a></li>
-              <li><a href="{{ route('collections.index') }}">收集箱</a></li>
-              <li><a href="{{ route('about') }} " >关于</a>
+              <li @if($active == 'home') class="active" @endif><a href="{{url()}}">首页</a></li>
+              <li @if($active == 'chapters') class="active" @endif><a href="{{ route('chapters.index') }}">题库</a></li>
+              <li @if($active == 'collections') class="active" @endif><a href="{{ route('collections.index') }}">收集箱</a></li>
+              <li @if($active == 'papers') class="active" @endif><a href="{{ route('papers.index') }}">试卷</a></li>
+              <li @if($active == 'about') class="active" @endif><a href="{{ route('about') }} " >关于</a>
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
