@@ -68,8 +68,6 @@
 
           <hr>
                
-               
-               
                 @include('layouts._thePanel')
                 @include('layouts._thePanel')
                 @include('layouts._thePanel')

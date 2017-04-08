@@ -38,6 +38,9 @@
 
             <!-- Bootstrap core JavaScript
     ================================================== -->
+    <!--更新jquery.js文件-->
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/js/myjs/myJsStyle.js"></script>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/js/assets/vendor/jquery.min.js"><\/script>')</script>

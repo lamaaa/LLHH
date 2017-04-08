@@ -59,3 +59,8 @@ Route::get('/papers', function(){
     return view('thePaper.papers');
 });
 
+//错题页
+Route::get('/wrongQ', function(){
+    return view('questions.wrongQuestions');
+});
+

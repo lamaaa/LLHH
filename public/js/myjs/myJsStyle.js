@@ -274,3 +274,22 @@ function addWrongRecord(question_id){
                 html: true,
             });
         });
+
+
+            function sort(criteria){
+                document.getElementById('criteria').value = criteria;
+                var order = document.getElementById('order').value;
+                var screenForm = document.getElementById('screenForm');
+
+                if (order == "asc")
+                {
+                    document.getElementById('order').value = "desc";
+                    screenForm.submit();
+                }
+                else
+                {
+                    document.getElementById('order').value = "asc";
+                    screenForm.submit();
+                }
+            }
+   

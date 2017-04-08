@@ -7,42 +7,46 @@
         <nav class="navbar navbar-default" >
             <div class="container">
                 <div id="navbar" class="navbar-collapse collapse">
-                    <form action="{{ route('collections.index') }}" id="screenForm" method="GET">
-                        <ul class="nav navbar-nav pull-left">
-                            <li>
-                                <span><strong>排序：</strong></span>
+                    <form class=" form-inline " role="form" action="{{ route('collections.index') }}" id="screenForm" method="GET">
+                            <li class="form-group">
+                                <a  class="navbar-brand" style="margin-top:7px" href="javascript:void(0);" 
+                                id="collected_at" onclick="sort(this.id)"><strong>排序：</strong>&nbsp&nbsp收藏时间</a>
                             </li>
-                            <li>
-                                <a href="javascript:void(0);" id="collected_at" onclick="sort(this.id)">收藏时间</a>
+                            <li class="form-group">
+                                <lable class="sr.only"></lable>
+                                <a  class="navbar-brand" style="margin-top:7px"href="javascript:void(0);" id="mistake_times" onclick="sort(this.id)">错误次数</a>
                             </li>
-                            <li>
-                                <a href="javascript:void(0);" id="mistake_times" onclick="sort(this.id)">错误次数</a>
+                            <li class="form-group">
+                                <input type="hidden" value="{{$sort['order']}}" name="order" id="order">
+                                <input type="hidden" value="{{$sort['criteria']}}" name="criteria" id="criteria">
                             </li>
-                            <input type="hidden" value="{{$sort['order']}}" name="order" id="order">
-                            <input type="hidden" value="{{$sort['criteria']}}" name="criteria" id="criteria">
-                            <li class="dropdown">
-                                <label for="">难度</label>
-                                <select name="difficulty" id="difficulty" class="form-control input" onchange="document.getElementById('screenForm').submit()" >
+
+
+                            <div class="form-group pull-right" style="margin:15px 10px">
+                                 <input type="text" class="form-control " name="search" placeholder="搜索题目">
+                                 <button type="submit" class="btn btn-default">搜索</button>
+                            </div>
+
+                            <li class="form-group pull-right" >
+                                <span  style="margin:15px 0px"><strong>&nbsp&nbsp&nbsp难度：</strong></span>
+                                <select name="difficulty" id="difficulty" class=" form-control  input" 
+                                onchange="document.getElementById('screenForm').submit()" style="margin:15px 0px">
                                     <option value="0" @if($filter['difficulty'] == 0) selected @endif>全部</option>
                                     <option value="1" @if($filter['difficulty'] == 1) selected @endif>容易</option>
                                     <option value="2" @if($filter['difficulty'] == 2) selected @endif>中等</option>
                                     <option value="3" @if($filter['difficulty'] == 3) selected @endif>困难</option>
                                 </select>
                             </li>
-                            <li class="dropdown">
-                                <label for="">题型</label>
-                                <select name="type" id="type" class="form-control input " onchange="document.getElementById('screenForm').submit()">
+                            <li class="form-group pull-right">
+                                <span  style="margin:15px 0px"><strong>题型：</strong></span>
+                                <select name="type" id="type" class="form-control input "
+                                 onchange="document.getElementById('screenForm').submit()" style="margin:15px 0px">
                                     <option value="0" @if($filter['type'] == 0) selected @endif>全部</option>
                                     <option value="1" @if($filter['type'] == 1) selected @endif>选择题</option>
                                     <option value="2" @if($filter['type'] == 2) selected @endif>填空题</option>
                                     <option value="3" @if($filter['type'] == 3) selected @endif>计算题</option>
                                 </select>
-                            </li>
-                        </ul>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="search" placeholder="搜索题目">
-                        </div>
-                        <button type="submit" class="btn btn-default">搜索</button>
+                            </li> 
                     </form>
                 </div>
             </div>
@@ -93,29 +97,4 @@
 
         <script src="/js/myjs/myJsStyle.js"></script>
 
-        <!-- 弹出框 !-->
-            <script>
-            $(function () {
-                $("[data-toggle='popover']").popover({
-                    html: true,
-                });
-            });
-
-            function sort(criteria){
-                document.getElementById('criteria').value = criteria;
-                var order = document.getElementById('order').value;
-                var screenForm = document.getElementById('screenForm');
-
-                if (order == "asc")
-                {
-                    document.getElementById('order').value = "desc";
-                    screenForm.submit();
-                }
-                else
-                {
-                    document.getElementById('order').value = "asc";
-                    screenForm.submit();
-                }
-            }
-          </script>
 @stop
