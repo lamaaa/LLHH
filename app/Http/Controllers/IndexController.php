@@ -24,16 +24,19 @@ class IndexController extends Controller
     public function home()
     {
         $fallibleQuestions = $this->indexRepository->getFallibleQuestions(10);
-        return view('home.index', compact(['fallibleQuestions']));
+        $active = 'home';
+        return view('home.index', compact(['fallibleQuestions', 'active']));
     }
 
     public function help()
     {
-        return view('static_pages.help');
+        $active = 'help';
+        return view('static_pages.help', compact('active'));
     }
 
     public function about()
     {
-        return view('static_pages.about');
+        $active = 'about';
+        return view('static_pages.about', compact('active'));
     }
 }

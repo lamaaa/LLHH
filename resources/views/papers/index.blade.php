@@ -126,6 +126,6 @@
     </div>
     </div>
     <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target=".bs-example-modal-lg">生成试卷</button>
-    @include('thePaper.doPaper')
+    @include('papers.doPaper')
 </div><!--选择结束-->
 @endsection

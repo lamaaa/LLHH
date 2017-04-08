@@ -26,7 +26,8 @@ class CollectionController extends Controller
         $sort = $this->collectionService->getSort($request);
         $collections = $this->collectionRepository->getCollections($filter, $sort);
         $questions = $this->collectionService->paginate($request,$collections);
-        return view('collections.index', compact('questions', 'filter', 'sort'));
+        $active = 'collections';
+        return view('collections.index', compact('questions', 'filter', 'sort', 'active'));
     }
 
     public function store(Request $request)
