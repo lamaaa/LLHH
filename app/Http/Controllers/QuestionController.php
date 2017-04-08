@@ -25,6 +25,8 @@ class QuestionController extends Controller
 
     public function done(Request $request)
     {
+        $filter = $this->questionService->getFilter($request);
+        $sort = $this->questionService->getSort($request);
         $questions = $this->questionRepository->getQuestions();
         $questions = $this->questionService->paginate($request, $questions);
         $active = '';
@@ -34,6 +36,8 @@ class QuestionController extends Controller
 
     public function wrong(Request $request)
     {
+        $filter = $this->questionService->getFilter($request);
+        $sort = $this->questionService->getSort($request);
         $questions = $this->questionRepository->getWrongQuestions();
         $questions = $this->questionService->paginate($request, $questions);
         $active = '';
