@@ -43,10 +43,10 @@
                             <li class="from-group" style="margin-top:8px" >
                                 <select name="" id="" class="form-control input">
                                     <option value="">难度</option>
-                                    <option value="">全部</option>
-                                    <option value="">容易</option>
-                                    <option value="">中等</option>
-                                    <option value="">困难</option>
+                                    <option value="0">全部</option>
+                                    <option value="1">容易</option>
+                                    <option value="2">中等</option>
+                                    <option value="3">困难</option>
                                 </select>
                             </li>
                             <li class="from-group " style="margin-top:8px"  >

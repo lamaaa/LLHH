@@ -31,7 +31,7 @@ class QuestionController extends Controller
         $questions = $this->questionService->paginate($request, $questions);
         $active = '';
 
-        return view('questions.done', compact('questions', 'active'));
+        return view('questions.done', compact('questions', 'active', 'filter', 'sort'));
     }
 
     public function wrong(Request $request)
@@ -42,6 +42,6 @@ class QuestionController extends Controller
         $questions = $this->questionService->paginate($request, $questions);
         $active = '';
 
-        return view('questions.wrong', compact('questions', 'active'));
+        return view('questions.wrong', compact('questions', 'active', 'filter', 'sort'));
     }
 }

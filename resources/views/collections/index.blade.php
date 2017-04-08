@@ -32,7 +32,7 @@
                                 <!--<span  style="margin:15px 0px"><strong>&nbsp&nbsp&nbsp难度：</strong></span>-->
                                 <select name="difficulty" id="difficulty" class=" form-control  input" 
                                 onchange="document.getElementById('screenForm').submit()" style="margin:15px 0px">
-                                    <option value="4">难度</option>
+
                                     <option value="0" @if($filter['difficulty'] == 0) selected @endif>全部</option>
                                     <option value="1" @if($filter['difficulty'] == 1) selected @endif>容易</option>
                                     <option value="2" @if($filter['difficulty'] == 2) selected @endif>中等</option>
@@ -43,7 +43,7 @@
                                 <!--<span  style="margin:15px 0px"><strong>题型：</strong></span>-->
                                 <select name="type" id="type" class="form-control input "
                                  onchange="document.getElementById('screenForm').submit()" style="margin:15px 0px">
-                                    <option value="4">题型</option>
+                                    <option value="4" @if($filter['type'] == 4) selected @endif>题型</option>
                                     <option value="0" @if($filter['type'] == 0) selected @endif>全部</option>
                                     <option value="1" @if($filter['type'] == 1) selected @endif>选择题</option>
                                     <option value="2" @if($filter['type'] == 2) selected @endif>填空题</option>

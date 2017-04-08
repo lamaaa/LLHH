@@ -27,6 +27,8 @@
                                 {{ Auth::user()->name }} <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a href="{{ route('questions.wrong', Auth::user()->id)}}">我的错题</a></li>
+                                <li><a href="{{route('questions.done'), Auth::user()->id}}">做过的题</a></li>
                                 <li><a href="{{ route('user.show', Auth::user()->id) }}">个人中心</a></li>
                                 <li><a href="{{ route('user.edit', Auth::user()->id) }}">编辑资料</a></li>
                                 <li class="divider"></li>

@@ -42,7 +42,7 @@ Route::resource('/records', 'RecordController');
 Route::resource('/papers', 'PaperController');
 // 题目
 Route::get('/questions/done', 'QuestionController@done')->name('questions.done');
-Route::get('/questions/wrong', 'QuestionController@wrong')->name('question.wrong');
+Route::get('/questions/wrong', 'QuestionController@wrong')->name('questions.wrong');
 
 //测试页
 Route::get('/tests', function() {
