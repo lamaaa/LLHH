@@ -63,5 +63,6 @@ Route::get('/testwrong', function(){
 
 //做过的题页面
 Route::get('/testDone',function(){
-    return view('questions.done');
+    $active = '';
+    return view('questions.done', compact('active'));
 });
