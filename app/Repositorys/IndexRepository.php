@@ -21,6 +21,6 @@ class IndexRepository
 
     public function getPopularQuestions($num)
     {
-        
+
     }
 }
