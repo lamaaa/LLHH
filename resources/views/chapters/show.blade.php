@@ -88,7 +88,7 @@
                         <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
                         <button id="button{{$question->id}}" onclick="changeQuestionState({{$question->id}})"
                         class="btn @if($question->isAdd) btn-danger @else btn-success @endif btn-style pull-right">
-                            <span id="">@if($question->isAdd == 1) 移出收集箱 @else 加入收集箱 @endif<span>
+                            <span id="">@if($question->isAdd == 1) 移出收集箱 @else 加入收集箱 @endif</span>
                         </button>
                         <input id="input{{$question->id}}" type="hidden" value="{{$question->isAdd}}">
                     </div>
@@ -104,10 +104,10 @@
                          aria-controls="answerButton">
                          答案</button>
                          <!--对错按钮-->
-                         <button type="button" class="btn btn-default pull-right"  data-toggle="modal" data-target="#wrongModal"
+                         <button type="button" class="btn btn-default pull-right"  data-toggle="modal"
                           id="falseBtn{{$question->id}}" onclick="addWrongRecord({{$question->id}})" >
                          错误</button> 
-                        <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#rightModal"
+                        <button type="button" class="btn btn-default pull-right" data-toggle="modal"
                          id="trueBtn{{$question->id}}" onclick="addRightRecord({{$question->id}})" >
                          正确</button> 
                      </div>
@@ -116,11 +116,12 @@
                     </div>
                 </div>
             @endforeach
+                <!--引入做对模态框和做错模态框-->
+                    @include('chapters.rightModal')
+                    @include('chapters.wrongModal')
                 {!! $questions->render() !!}
             </div>
-            <!--引入做对模态框和做错模态框-->
-            @include('chapters.rightModal')
-            @include('chapters.wrongModal')
+
          </div>
     </div>
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>

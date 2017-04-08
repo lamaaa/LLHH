@@ -16,7 +16,7 @@ class CreateRecordsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->index();
             $table->integer('question_id')->index();
-            $table->integer('isRight')->default(false);
+            $table->boolean('isRight')->default(false);
             $table->timestamps();
         });
     }
