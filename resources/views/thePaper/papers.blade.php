@@ -7,7 +7,7 @@
         <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <span class="lead">选择知识点：</span>
+            <span class="">选择知识点：</span>
             </a>
         </h4> 
         </div>
@@ -24,16 +24,19 @@
                 </div>-->
                 <div class="checkbox">
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="option1" id="part1"> <span>选修1&nbsp&nbsp</span>
+                        <input type="text">
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option1" id="part1"> <span class="lead">选修1&nbsp&nbsp</span>
                     </label>
                     <label class="checkbox-inline">                   
-                        <input type="checkbox" value="option2" id="part2"><span>选修2&nbsp&nbsp</span>
+                        <input type="checkbox" value="option2" id="part2"><span class="lead">选修2&nbsp&nbsp</span>
                     </label> 
                     <label class="checkbox-inline">                  
-                        <input type="checkbox" value="option3" id="part3"><span>选修3&nbsp&nbsp</span>
+                        <input type="checkbox" value="option3" id="part3"><span class="lead">选修3&nbsp&nbsp</span>
                     </label>   
                     <label class="checkbox-inline">                 
-                        <input type="checkbox" value="option4" id="part4"><span>选修4&nbsp&nbsp</span>
+                        <input type="checkbox" value="option4" id="part4"><span class="lead">选修4&nbsp&nbsp</span>
                     </label>                                         
                 </div>   
             </div>
@@ -44,7 +47,7 @@
         <h4 class="panel-title">
             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
              aria-expanded="false" aria-controls="collapseTwo">
-             <span class="lead">选择难度：</span>
+             <span >选择难度：</span>
             </a>
         </h4>
         </div>
@@ -52,16 +55,16 @@
             <div class="panel-body">
                 <div class="radio">
                     <label class="radio-inline">
-                        <input type="radio" value="option1" id="part1"> <span>全部&nbsp&nbsp</span>
+                        <input type="radio" value="option1" id="part1"> <span class="lead">全部&nbsp&nbsp</span>
                     </label>
-                    <label class="radio-inlin">                   
-                        <input type="radio" value="option2" id="part2"><span>容易&nbsp&nbsp</span>
+                    <label class="radio-inline">                   
+                        <input type="radio" value="option2" id="part2"><span class="lead">容易&nbsp&nbsp</span>
                     </label> 
-                    <label class="radio-inlin">                  
-                        <input type="radio" value="option3" id="part3"><span>中等&nbsp&nbsp</span>
+                    <label class="radio-inline">                  
+                        <input type="radio" value="option3" id="part3"><span class="lead">中等&nbsp&nbsp</span>
                     </label>   
-                    <label class="radio-inlin">                    
-                        <input type="radio" value="option4" id="part4"><span>困难&nbsp&nbsp</span>
+                    <label class="radio-inline">                    
+                        <input type="radio" value="option4" id="part4"><span class="lead">困难&nbsp&nbsp</span>
                     </label>                                         
                 </div>    
             </div>
@@ -71,7 +74,7 @@
         <div class="panel-heading" role="tab" id="headingThree">
         <h4 class="panel-title">
             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            <span class="lead">选择题型：</span>
+            <span class="">选择题型：</span>
             </a>
         </h4>
         </div>
@@ -79,13 +82,13 @@
             <div class="panel-body">
                 <div class="checkbox">
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="option1" id="part1"> <span>选择题&nbsp&nbsp</span>
+                        <input type="checkbox" value="option1" id="part1"> <span class="lead">选择题&nbsp&nbsp</span>
                     </label>
                     <label class="checkbox-inline">                   
-                        <input type="checkbox" value="option2" id="part2"><span>计算题&nbsp&nbsp</span>
+                        <input type="checkbox" value="option2" id="part2"><span class="lead">计算题&nbsp&nbsp</span>
                     </label> 
                     <label class="checkbox-inline">                  
-                        <input type="checkbox" value="option3" id="part3"><span>应用题&nbsp&nbsp</span>
+                        <input type="checkbox" value="option3" id="part3"><span class="lead">应用题&nbsp&nbsp</span>
                     </label>                                            
                 </div>  
             </div>
@@ -95,7 +98,7 @@
         <div class="panel-heading" role="tab" id="headingFour">
         <h4 class="panel-title">
             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-            <span class="lead">选择其它：</span>
+            <span class="">选择其它：</span>
             </a>
         </h4>
         </div>
@@ -103,16 +106,16 @@
             <div class="panel-body">
                 <div class="checkbox">
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="option1" id="part1"> <span>收集箱题目&nbsp&nbsp</span>
+                        <input type="checkbox" value="option1" id="part1"> <span class="lead">收集箱题目&nbsp&nbsp</span>
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="option2" id="part2"> <span>我的错题&nbsp&nbsp</span>
+                        <input type="checkbox" value="option2" id="part2"> <span class="lead"> 我的错题&nbsp&nbsp</span>
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="option3" id="part3"> <span>易错题&nbsp&nbsp</span>
+                        <input type="checkbox" value="option3" id="part3"> <span class="lead">易错题&nbsp&nbsp</span>
                     </label> 
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="option4" id="part4"> <span>最热收集&nbsp&nbsp</span>
+                        <input type="checkbox" value="option4" id="part4"> <span class="lead">最热收集&nbsp&nbsp</span>
                     </label>
                     <label class="checkbox-inline pull-right">
                         
