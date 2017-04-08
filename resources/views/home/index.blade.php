@@ -15,8 +15,8 @@
                 <img class="first-slide" src="/img/carousel_page1.jpg" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>难题</h1>
-                        <p>很难</p>
+                        <h1>我的收集箱</h1>
+                        <p>练习</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">刷题</a></p>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 <img class="second-slide" src="/img/carousel_page2.jpg" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>模拟题</h1>
+                        <h1>试卷</h1>
                         <p>综合练习</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">刷题</a></p>
                     </div>
@@ -67,8 +67,15 @@
           <h2><strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp真题</strong></h2>
 
           <hr>
-
+               
+               
+               
+                @include('layouts._thePanel')
+                @include('layouts._thePanel')
+                @include('layouts._thePanel')
+                @include('layouts._thePanel')
           <ul >
+          
           </ul>
           <p><a class="btn btn-default fr" href="#" role="button">阅读更多&raquo;</a></p>
         </div><!-- /.col-lg-6 -->
@@ -78,17 +85,12 @@
         <h2><strong>&nbsp&nbsp&nbsp&nbsp&nbsp易错题</strong></h2>
 
         <hr class="default">
-
-
-        
-    
+                @include('layouts._thePanel')
+                @include('layouts._thePanel')
+                @include('layouts._thePanel')
+                @include('layouts._thePanel')
           <ul>
-              @foreach($fallibleQuestions as $fallibleQuestion)
-                  <li>
-                      <a href="#">{!!$fallibleQuestion->description!!}</a>
-                      <span class="fr">{{$fallibleQuestion->created_at}}</span>
-                  </li>
-              @endforeach
+
           </ul>
           <p><a class="btn btn-default fr" href="#" role="button">阅读更多&raquo;</a></p>
         </div><!-- /.col-lg-6 -->
