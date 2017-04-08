@@ -31,8 +31,6 @@ Route::get('/help', 'IndexController@help')->name('help');
 Route::get('/about', 'IndexController@about')->name('about');
 // 用户
 Route::resource('/user', 'UserController');
-// 题目
-Route::resource('/questions', 'QuestionController');
 // 章节
 Route::resource('/chapters', 'ChapterController');
 // 收集箱
