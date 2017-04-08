@@ -82,4 +82,9 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany(Collection::class);
     }
+
+    public function records()
+    {
+        return $this->hasMany(Record::class);
+    }
 }

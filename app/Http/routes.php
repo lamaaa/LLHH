@@ -40,6 +40,9 @@ Route::post('/collections/delete', 'CollectionController@delete')->name('collect
 Route::resource('/records', 'RecordController');
 // 试卷
 Route::resource('/papers', 'PaperController');
+// 题目
+Route::get('/questions/done', 'QuestionController@done')->name('questions.done');
+Route::get('/questions/wrong', 'QuestionController@wrong')->name('question.wrong');
 
 //测试页
 Route::get('/tests', function() {

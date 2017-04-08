@@ -31,7 +31,8 @@ class UserController extends Controller
     public function index()
     {
         $users = $this->userService->paginate(30);
-        return view('user.index', compact('users'));
+        $active = '';
+        return view('user.index', compact('users', 'active'));
     }
 
     /*
@@ -41,7 +42,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = $this->userService->editUser($id);
-        return view('user.edit', compact('user'));
+        $active = '';
+        return view('user.edit', compact('user', 'active'));
     }
 
     /*
@@ -50,8 +52,9 @@ class UserController extends Controller
     public function show($id)
     {
         $user = $this->userService->getUserById($id);
+        $active = '';
 
-        return view('user.show', compact('user'));
+        return view('user.show', compact('user', 'active'));
     }
 
     /*
