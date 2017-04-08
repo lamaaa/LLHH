@@ -7,7 +7,9 @@
  */
 namespace App\Repositorys;
 
+use App\Models\Collection;
 use App\Models\Question;
+use Illuminate\Support\Facades\DB;
 
 class IndexRepository
 {
@@ -21,6 +23,10 @@ class IndexRepository
 
     public function getPopularQuestions($num)
     {
+        $popularQuestions = Question::orderBy('collected_times', 'desc')
+            ->take($num)
+            ->get();
 
+        return $popularQuestions;
     }
 }

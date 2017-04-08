@@ -86,18 +86,22 @@
                 <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#answerButton{{$question->id}}" aria-expanded="false"
                     aria-controls="answerButton">
                     答案</button>
+                <button type="button" class="btn btn-default pull-right"  data-toggle="modal"
+                        id="falseBtn{{$question->id}}" onclick="addWrongRecord({{$question->id}})" >
+                    错误</button>
+                <button type="button" class="btn btn-default pull-right" data-toggle="modal"
+                        id="trueBtn{{$question->id}}" onclick="addRightRecord({{$question->id}})" >
+                    正确</button>
             </div>
             <div class="collapse" id="answerButton{{$question->id}}">
                 {!! $question->answer !!}
             </div>
+            <!--对错按钮-->
         </div><!--结束做题面板-->
          @endforeach
         {{ $questions->render() }}
     </div>
-
-
-        <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-
-        <script src="/js/myjs/myJsStyle.js"></script>
+    @include('chapters.rightModal')
+    @include('chapters.wrongModal')
 
 @stop

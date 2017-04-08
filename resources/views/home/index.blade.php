@@ -67,11 +67,7 @@
           <h2><strong>&nbsp&nbsp&nbsp&nbsp热门收藏</strong></h2>
 
           <hr>
-               
-                @include('layouts._thePanel')
-                @include('layouts._thePanel')
-                @include('layouts._thePanel')
-                @include('layouts._thePanel')
+                @include('layouts.question')
           <ul >
           
           </ul>
@@ -83,10 +79,7 @@
         <h2><strong>&nbsp&nbsp&nbsp&nbsp&nbsp易错题</strong></h2>
 
         <hr class="default">
-                @include('layouts._thePanel')
-                @include('layouts._thePanel')
-                @include('layouts._thePanel')
-                @include('layouts._thePanel')
+                @include('layouts.question')
           <ul>
 
           </ul>
