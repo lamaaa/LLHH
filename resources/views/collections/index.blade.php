@@ -100,8 +100,9 @@
         </div><!--结束做题面板-->
          @endforeach
         {{ $questions->render() }}
+        @include('chapters.rightModal')
+        @include('chapters.wrongModal')
     </div>
-    @include('chapters.rightModal')
-    @include('chapters.wrongModal')
+
 
 @stop

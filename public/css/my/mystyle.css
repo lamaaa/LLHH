@@ -28,8 +28,12 @@
 .myContainerStyle{
 	margin-top:12px;
 }
+/*首页是试题面板字体样式*/
+.fontSize span{
+	font-size:large;
+}
 
-/*收集按钮样式*/
-
-
+.navFontSize{
+	font-size:large;
+}
 

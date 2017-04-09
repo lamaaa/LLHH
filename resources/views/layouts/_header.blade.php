@@ -1,5 +1,5 @@
   <header class="navbar-jumbotron">
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom:0">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom:0;height:50px">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -8,9 +8,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://localhost:8000/"><img src="" alt="LLHH">  </a>
+          <a class="navbar-brand" href="http://localhost:8000/"><span class="navFontSize"><img src="" alt="LLHH"></span>  </a>
         </div>
-        <div class="collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse navFontSize" id="navbar">
           <ul class="nav navbar-nav">
               <li @if($active == 'home') class="active" @endif><a href="{{url()}}">首页</a></li>
               <li @if($active == 'chapters') class="active" @endif><a href="{{ route('chapters.index') }}">题库</a></li>
@@ -19,7 +19,7 @@
               <li @if($active == 'about') class="active" @endif><a href="{{ route('about') }} " >关于</a>
               </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right ">
                     @if (Auth::check())
                         <li><a href="{{ route('user.index') }}">用户列表</a></li>
                         <li class="dropdown">
