@@ -44,9 +44,5 @@
                 </form>
             </div>
         </div>
-            <hr>
     </div>
-
-
-
 @stop

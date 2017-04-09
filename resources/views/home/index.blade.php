@@ -64,7 +64,7 @@
         <div class="col-lg-6">
         <!-- <img class="img-circle" src="img/too.jpg" alt="Generic placeholder image" width="140" height="140"> -->
           
-          <h2><strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp真题</strong></h2>
+          <h2><strong>&nbsp&nbsp&nbsp&nbsp热门收藏</strong></h2>
 
           <hr>
 

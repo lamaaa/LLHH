@@ -29,12 +29,11 @@
     <link rel="stylesheet" type="text/css" href="/css/my/mystyle.css">
 </head>
     <body>
-        @include(('layouts._header'))
 
+            @include(('layouts._header'))
             @include('shared.messages')
             @yield('content')
             @include(('layouts._footer'))
-
 
             <!-- Bootstrap core JavaScript
     ================================================== -->

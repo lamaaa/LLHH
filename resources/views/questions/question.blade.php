@@ -1,6 +1,4 @@
-<!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
-<div class=" pull-right" style="width:800px">
-    @foreach($questions as $question)
+ @foreach($questions as $question)
         <div class="panel panel-default" >
             <div class="panel-heading">
                         <span class="lead">难度：
@@ -45,4 +43,3 @@
 <!--引入做对模态框和做错模态框-->
 @include('chapters.rightModal')
 @include('chapters.wrongModal')
-</div>

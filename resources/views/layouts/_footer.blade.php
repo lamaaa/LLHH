@@ -1,4 +1,5 @@
   <!-- FOOTER -->
+      <hr>
       <footer>
         <p class="pull-right">
             <a href="#">回到顶部</a>

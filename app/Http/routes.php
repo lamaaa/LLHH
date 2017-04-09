@@ -42,7 +42,7 @@ Route::resource('/records', 'RecordController');
 Route::resource('/papers', 'PaperController');
 // 题目
 Route::get('/questions/done', 'QuestionController@done')->name('questions.done');
-Route::get('/questions/wrong', 'QuestionController@wrong')->name('question.wrong');
+Route::get('/questions/wrong', 'QuestionController@wrong')->name('questions.wrong');
 
 //测试页
 Route::get('/tests', function() {
@@ -56,6 +56,13 @@ Route::get('/testpapers', function(){
 });
 
 //错题页
-Route::get('/testwrongQ', function(){
-    return view('questions.wrongQuestions');
+Route::get('/testwrong', function(){
+    return view('questions.wrong');
+});
+
+
+//做过的题页面
+Route::get('/testDone',function(){
+    $active = '';
+    return view('questions.done', compact('active'));
 });
