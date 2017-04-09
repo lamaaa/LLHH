@@ -131,13 +131,13 @@ class CollectionRepository
         $search = $filter['search'];
         // 筛选难度
         switch ($filter['difficulty']){
-            case 1:
+            case 'easy':
                 $difficulties = [1, 2];
                 break;
-            case 2:
+            case 'middle':
                 $difficulties = [3, 4];
                 break;
-            case 3:
+            case 'difficult':
                 $difficulties = [5];
                 break;
             default:
@@ -146,13 +146,13 @@ class CollectionRepository
 
         // 筛选题型
         switch ($filter['type']){
-            case 1:
+            case 'choice':
                 $types = [1];
                 break;
-            case 2:
+            case 'completion':
                 $types = [2];
                 break;
-            case 3:
+            case 'calculation':
                 $types = [3];
                 break;
             default:

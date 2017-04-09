@@ -29,19 +29,24 @@ class ChapterController extends Controller
     {
         // 默认为显示第一章的问题
         $chapter_id = 1;
-        $difficulty = $this->chapterService->getDifficulty($request);
+        $filter = $this->chapterService->getFilter($request);
+//        $sort = $this->chapterService->getSort($request);
         $modules = $this->moduleRepository->all();
-        $questions = $this->chapterRepository->getQuestions($chapter_id, $difficulty);
+        $questions = $this->chapterRepository->getQuestions($chapter_id, $filter);
+        $questions = $this->chapterService->paginate($request, $questions);
+
         $active = 'chapters';
-        return view('chapters.show', compact(['modules', 'questions', 'difficulty', 'chapter_id', 'active']));
+        return view('chapters.show', compact(['modules', 'questions', 'chapter_id', 'active', 'filter', 'sort']));
     }
 
     public function show(Request $request, $chapter_id)
     {
-        $difficulty = $this->chapterService->getDifficulty($request);
+        $filter = $this->chapterService->getFilter($request);
+        $sort = $this->chapterService->getSort($request);
         $modules = $this->moduleRepository->all();
-        $questions = $this->chapterRepository->getQuestions($chapter_id, $difficulty);
+        $questions = $this->chapterRepository->getQuestions($chapter_id, $filter, $sort);
+        $questions = $this->chapterService->paginate($request, $questions);
         $active = 'chapters';
-        return view('chapters.show', compact(['modules', 'questions', 'difficulty', 'chapter_id', 'active']));
+        return view('chapters.show', compact(['modules', 'questions', 'chapter_id', 'active', 'filter', 'sort']));
     }
 }

@@ -8,16 +8,51 @@
 namespace App\Services;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Input;
 
 class ChapterService
 {
-    public function getDifficulty(Request $request)
+    public function getFilter(Request $request)
     {
-        $difficulty = [1, 2, 3];
-        if ($request->has('difficulty') && in_array($request->input('difficulty'), $difficulty))
+        $difficulties = ['easy', 'middle', 'difficult'];
+        $types = ['choice', 'completion', 'calculation'];
+        $filter['search'] = $request->input('search');
+        $filter['difficulty'] = 'all';
+        if ($request->has('difficulty') && in_array($request->input('difficulty'), $difficulties))
         {
-            return $request->input('difficulty');
+            $filter['difficulty'] = $request->input('difficulty');
         }
-        return 0;
+
+        $filter['type'] = 'all';
+        if ($request->has('type') && in_array($request->input('type'), $types))
+        {
+            $filter['type'] = $request->input('type');
+        }
+
+        return $filter;
+    }
+
+    public function getSort(Request $request)
+    {
+        $sort['order'] = $request->input('order', 'asc');
+        $sort['criteria'] = $request->input('criteria', 'created_at');
+
+        return $sort;
+    }
+
+    public function paginate(Request $request, $questions)
+    {
+        $page = Input::get('page', 1);
+        $perPage = 15;
+        $offset = ($page * $perPage) - $perPage;
+
+        return new LengthAwarePaginator(
+            array_slice($questions, $offset, $perPage, true),
+            count($questions),
+            $perPage,
+            $page,
+            ['path' => $request->url(), 'query' => $request->query()]
+        );
     }
 }

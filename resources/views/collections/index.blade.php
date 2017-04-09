@@ -32,22 +32,20 @@
                                 <!--<span  style="margin:15px 0px"><strong>&nbsp&nbsp&nbsp难度：</strong></span>-->
                                 <select name="difficulty" id="difficulty" class=" form-control  input" 
                                 onchange="document.getElementById('screenForm').submit()" style="margin:15px 0px">
-
-                                    <option value="0" @if($filter['difficulty'] == 0) selected @endif>全部</option>
-                                    <option value="1" @if($filter['difficulty'] == 1) selected @endif>容易</option>
-                                    <option value="2" @if($filter['difficulty'] == 2) selected @endif>中等</option>
-                                    <option value="3" @if($filter['difficulty'] == 3) selected @endif>困难</option>
+                                    <option value="all" @if($filter['difficulty'] == 'all') selected @endif>难度</option>
+                                    <option value="easy" @if($filter['difficulty'] == 'easy') selected @endif>容易</option>
+                                    <option value="middle" @if($filter['difficulty'] == 'middle') selected @endif>中等</option>
+                                    <option value="difficult" @if($filter['difficulty'] == 'difficult') selected @endif>困难</option>
                                 </select>
                             </li>
                             <li class="form-group pull-right">
                                 <!--<span  style="margin:15px 0px"><strong>题型：</strong></span>-->
                                 <select name="type" id="type" class="form-control input "
                                  onchange="document.getElementById('screenForm').submit()" style="margin:15px 0px">
-                                    <option value="4" @if($filter['type'] == 4) selected @endif>题型</option>
-                                    <option value="0" @if($filter['type'] == 0) selected @endif>全部</option>
-                                    <option value="1" @if($filter['type'] == 1) selected @endif>选择题</option>
-                                    <option value="2" @if($filter['type'] == 2) selected @endif>填空题</option>
-                                    <option value="3" @if($filter['type'] == 3) selected @endif>计算题</option>
+                                    <option value="all" @if($filter['type'] == 'all') selected @endif>题型</option>
+                                    <option value="choice" @if($filter['type'] == 'choice') selected @endif>选择题</option>
+                                    <option value="completion" @if($filter['type'] == 'completion') selected @endif>填空题</option>
+                                    <option value="calculation" @if($filter['type'] == 'calculation') selected @endif>计算题</option>
                                 </select>
                             </li> 
                     </form>
@@ -69,7 +67,7 @@
                   @for($countStar = 0; $countStar < 5 - $question->difficulty; $countStar++)
                       <img src="/img/nsts.gif" alt="a null start">
                   @endfor
-              </span> <span class="lead">&nbsp收藏时间：{{ $question->collected_at }}</span>
+              </span> <span class="lead">&nbsp收藏时间：{{ $question->collected_at->diffForHumans() }}</span>
               </span> <span class="lead">&nbsp错误次数：{{ $question->mistake_times }}</span>
                 <form style="display:block;float: right;" action="{{ route('collections.destroy', $question->id) }}" method="POST">
                     {{csrf_field()}}
