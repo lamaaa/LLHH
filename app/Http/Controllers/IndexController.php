@@ -23,8 +23,8 @@ class IndexController extends Controller
 
     public function home()
     {
-        $fallibleQuestions = $this->indexRepository->getFallibleQuestions(10);
-        $popularQuestions = $this->indexRepository->getPopularQuestions(10);
+        $fallibleQuestions = $this->indexRepository->getFallibleQuestions(5);
+        $popularQuestions = $this->indexRepository->getPopularQuestions(5);
         $active = 'home';
         return view('home.index', compact(['fallibleQuestions', 'popularQuestions', 'active']));
     }

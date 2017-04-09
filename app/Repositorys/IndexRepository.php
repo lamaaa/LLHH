@@ -26,7 +26,6 @@ class IndexRepository
         $popularQuestions = Question::orderBy('collected_times', 'desc')
             ->take($num)
             ->get();
-
         return $popularQuestions;
     }
 }
