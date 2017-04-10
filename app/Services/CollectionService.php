@@ -30,16 +30,16 @@ class CollectionService
 
     public function getFilter(Request $request)
     {
-        $difficulties = [1, 2, 3];
-        $types = [1, 2, 3];
+        $difficulties = ['easy', 'middle', 'difficult'];
+        $types = ['choice', 'completion', 'calculation'];
         $filter['search'] = $request->input('search');
-        $filter['difficulty'] = 0;
+        $filter['difficulty'] = 'all';
         if ($request->has('difficulty') && in_array($request->input('difficulty'), $difficulties))
         {
             $filter['difficulty'] = $request->input('difficulty');
         }
 
-        $filter['type'] = 0;
+        $filter['type'] = 'all';
         if ($request->has('type') && in_array($request->input('type'), $types))
         {
             $filter['type'] = $request->input('type');
