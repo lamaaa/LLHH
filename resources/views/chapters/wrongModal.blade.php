@@ -9,7 +9,7 @@
                         <h4 class="modal-title" id="wrongModalLabel">LLHH试题库</h4>
                     </div>
                     <div class="modal-body">
-                        你是第<span id="mistake_times">1</span>次做错这道哦，要加油了哦！！！！
+                        你是第<span id="myMistake_times">1</span>次做错这道哦，要加油了哦！！！！
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

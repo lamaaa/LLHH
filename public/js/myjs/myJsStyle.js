@@ -210,6 +210,9 @@ function changeQuestionState(question_id)
 
 }
 
+
+
+
 //用Ajax渲染对错按钮,点击后给后台传数据，做对或者做错
 function addRightRecord(question_id)
 {
@@ -258,7 +261,7 @@ function addWrongRecord(question_id){
              if(result.resultCode==0)
                 alert("服务端出现了一些错误");
             else{
-                 document.getElementById("mistake_times").innerHTML=result.mistake_times;
+                 document.getElementById("myMistake_times").innerHTML=result.mistake_times;
                  $('#wrongModal').modal({keyboard: true});
                 }
          }

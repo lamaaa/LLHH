@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
+@section('title','首页')
+
 @section('content')
     <!-- Carousel
     ================================================== -->
@@ -67,61 +69,121 @@
           <h2><strong>&nbsp&nbsp&nbsp&nbsp热门收藏</strong></h2>
 
           <hr>
+            <div class="container-fluid">
+            @foreach($popularQuestions as $popularQuestion)
+                <div class="panel panel-default fontSize" >
+                    <div class="panel-heading">
+                        <span class="">难度：
+                            @for($countStar = 0; $countStar < $popularQuestion->difficulty; $countStar++)
+                                <img src="/img/sts.gif" alt="a start">
+                            @endfor
+                            @for($countStar = 0; $countStar < 5 - $popularQuestion->difficulty; $countStar++)
+                                <img src="/img/nsts.gif" alt="a null start">
+                            @endfor
+                        </span>
+                        <span class="">&nbsp入库时间：
+{{--                                {{$uestion->created_at}}--}}
+                            </span>
+                        <button id="button{{$popularQuestion->id}}" onclick="changeQuestionState({{$popularQuestion->id}})"
+                                class="btn @if($popularQuestion->isAdd) btn-danger @else btn-success @endif btn-style pull-right">
+                            @if($popularQuestion->isAdd == 1) 移出收集箱 @else 加入收集箱 @endif
+                        </button>
+                        <input id="input{{$popularQuestion->id}}" type="hidden" value="{{$popularQuestion->isAdd}}">
+                    </div>
 
+                    <div class="panel-body">
+                        <p>
+                            {!!$popularQuestion->description!!}
+                        </p>
+                    </div>
+                    <div class="panel-footer">
+                        <!--答案按钮-->
+                        <button type="button" class="btn btn-danger" data-toggle="collapse"
+                        data-target="#answerButton{{$popularQuestion->id}}" aria-expanded="false"
+                                aria-controls="answerButton">
+                            答案</button>
+                        <!--对错按钮-->
+                        {{--<button type="button" class="btn btn-default pull-right"  data-toggle="modal"--}}
+                                {{--id="falseBtn{{$question->id}}" onclick="addWrongRecord({{$question->id}})" >--}}
+                            {{--错误</button>--}}
+                        {{--<button type="button" class="btn btn-default pull-right" data-toggle="modal"--}}
+                                {{--id="trueBtn{{$question->id}}" onclick="addRightRecord({{$question->id}})" >--}}
+                            {{--正确</button>--}}
+                    </div>
+                    <div class="collapse" id="answerButton{{$popularQuestion->id}}">
+                        {!! $popularQuestion->answer !!}
+                    </div>
+                </div>
+            @endforeach
+            </div>
+        <!--引入做对模态框和做错模态框-->
+            @include('chapters.rightModal')
+            @include('chapters.wrongModal')
 
-          <p><a class="btn btn-default fr" href="#" role="button">阅读更多&raquo;</a></p>
+            <p><a class="btn btn-default pull-right" href="{{ route('collections.index') }}" role="button">阅读更多&raquo;</a></p>
         </div><!-- /.col-lg-6 -->
-        <div text-decoration:underline class="col-lg-6">
+        <div  class="col-lg-6">
         <!-- <img class="img-circle" src="img/too.jpg" alt="Generic placeholder image" width="140" height="140"> -->
           
         <h2><strong>&nbsp&nbsp&nbsp&nbsp&nbsp易错题</strong></h2>
 
-        <hr>
 
+        <hr class="default">
+                {{--@include('layouts.question')--}}
+            {{--易错题--}}
+            <div class="container-fluid">
+                @foreach($fallibleQuestions as $fallibleQuestion)
+                    <div class="panel panel-default fontSize" >
+                        <div class="panel-heading">
+                        <span class="">难度：
+                            @for($countStar = 0; $countStar < $fallibleQuestion->difficulty; $countStar++)
+                                <img src="/img/sts.gif" alt="a start">
+                            @endfor
+                            @for($countStar = 0; $countStar < 5 - $fallibleQuestion->difficulty; $countStar++)
+                                <img src="/img/nsts.gif" alt="a null start">
+                            @endfor
+                        </span>
+                            <span class="">&nbsp入库时间：
+                                {{--                                {{$uestion->created_at}}--}}
+                            </span>
+                            <button id="button{{$fallibleQuestion->id}}" onclick="changeQuestionState({{$fallibleQuestion->id}})"
+                                    class="btn @if($fallibleQuestion->isAdd) btn-danger @else btn-success @endif btn-style pull-right">
+                                @if($fallibleQuestion->isAdd == 1) 移出收集箱 @else 加入收集箱 @endif
+                            </button>
+                            <input id="input{{$fallibleQuestion->id}}" type="hidden" value="{{$fallibleQuestion->isAdd}}">
+                        </div>
 
-      <!-- START THE FEATURETTES -->
+                        <div class="panel-body">
+                            <p>
+                                {!!$fallibleQuestion->description!!}
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <!--答案按钮-->
+                            <button type="button" class="btn btn-danger" data-toggle="collapse"
+                                    data-target="#answerButton{{$fallibleQuestion->id}}" aria-expanded="false"
+                                    aria-controls="answerButton">
+                                答案</button>
+                            <!--对错按钮-->
+                            {{--<button type="button" class="btn btn-default pull-right"  data-toggle="modal"--}}
+                            {{--id="falseBtn{{$question->id}}" onclick="addWrongRecord({{$question->id}})" >--}}
+                            {{--错误</button>--}}
+                            {{--<button type="button" class="btn btn-default pull-right" data-toggle="modal"--}}
+                            {{--id="trueBtn{{$question->id}}" onclick="addRightRecord({{$question->id}})" >--}}
+                            {{--正确</button>--}}
+                        </div>
+                        <div class="collapse" id="answerButton{{$fallibleQuestion->id}}">
+                            {!! $fallibleQuestion->answer !!}
+                        </div>
+                    </div>
+                @endforeach
+            </div>
 
-      <hr class="featurette-divider">
+          <p><a class="btn btn-default fr" href="{{route('chapters.index')}}}" role="button">阅读更多&raquo;</a></p>
+        </div><!-- /.col-lg-6 -->
+      
+      </div><!-- /.row -->
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">头脑风暴法 <!-- <span class="text-muted">It'll blow your mind.</span>--></h2>
-          <p class="lead">头脑风暴何以能激发创新思维？根据A·F·奥斯本本人及其他研究者的看法，主要有以下几点：
-                  </br>
-              　　第一，联想反应。联想是产生新观念的基本过程。在集体讨论问题的过程中，每提出一个新的观念，都能引发他人的联想。相继产生一连串的新观念，产生连锁反应，形成新观念堆，为创造性地解决问题提供了更多的可能性。
-                  </br>
-              　　第二，热情感染。在不受任何限制的情况下，集体讨论问题能激发人的热情。人人自由发言、相互影响、相互感染，能形成热潮，突破固有观念的束缚，最大限度地发挥创造性地思维能力</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="img/too.jpg" alt="jpg" ><!--data-src="holder.js/500x500/auto" alt="Generic placeholder image" -->
-        </div>
-      </div>
+      @include(('home.news'))
 
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading"> 学习曲线 <!-- <span class="text-muted"></span> --></h2>
-          <p class="lead">学习曲线学习曲线表示了经验与效率之间的关系，指的是越是经常地执行一项任务，每次所需的时间就越少。将学习效果数量化绘制于坐标纸上，横轴代表练习次数（或产量），纵轴代表学习的效果（单位产品所耗时间），这样绘制出的一条曲线，就是学习曲线。学习效果受许多因素的影响，主要有：操作者的动作熟练程度。这是影响学习曲线的最基本因素。管理技术的改善，正确的培训、指导，充分的生产准备与周到的服务，工资奖励及惩罚等管理政策的运用产品设计的改善生产设备与工具的质量各种材料的 连续供应和 质量信息反馈的及时性专业化分工程度</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" src="img/too.jpg" alt="img/love-story-03.jpg">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">批判性思考 <!-- <span class="text-muted">Checkmate.</span>--></h2>
-          <p class="lead">我们认为批判性思考是一种有目的而自律的判断，并对判断的基础就证据、概念、方法学、标准釐定、背景因素层面加以诠释、分析、评估、推理与解释……有理想批判性思考能力的人凡事习惯追根究柢，认知务求全面周到，判断必出于理据，心胸保持开放，态度保有弹性，评价必求公正，能坦然面对主观偏见，判断必求谨慎，且必要时愿意重新思量，对争议点清楚了解，处理复杂事物有条不紊，蓃集相关资料勤奋不懈，选取标准务求合理，专注于探索问题，而且在该问题该环境许可的情况下坚持寻求最精确的结果。</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="img/too.jpg" alt="img/love-story-03.jpg">
-        </div>
-      </div>
-
-    <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
 @stop

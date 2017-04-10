@@ -30,8 +30,7 @@
 
                                 <select name="difficulty" id="difficulty" class=" form-control  input"
                                 onchange="document.getElementById('screenForm').submit()" style="margin:15px 0px">
-                                    <option value="4">难度</option>
-                                    <option value="0" @if($filter['difficulty'] == 0) selected @endif>全部</option>
+                                    <option value="0" @if($filter['difficulty'] == 0) selected @endif>难度</option>
                                     <option value="1" @if($filter['difficulty'] == 1) selected @endif>容易</option>
                                     <option value="2" @if($filter['difficulty'] == 2) selected @endif>中等</option>
                                     <option value="3" @if($filter['difficulty'] == 3) selected @endif>困难</option>
@@ -42,7 +41,7 @@
                                 <select name="type" id="type" class="form-control input "
                                  onchange="document.getElementById('screenForm').submit()" style="margin:15px 0px">
                                     <option value="4">题型</option>
-                                    <option value="0" @if($filter['type'] == 0) selected @endif>全部</option>
+                                    <option value="0" @if($filter['type'] == 0) selected @endif>题型</option>
                                     <option value="1" @if($filter['type'] == 1) selected @endif>选择题</option>
                                     <option value="2" @if($filter['type'] == 2) selected @endif>填空题</option>
                                     <option value="3" @if($filter['type'] == 3) selected @endif>计算题</option>
@@ -85,9 +84,10 @@
                                 aria-controls="answerButton">
                          答案</button>
                          <!--对错按钮-->
-                         <button type="button" class="btn btn-default pull-right"  data-toggle="modal"
+                         <button type="button" class="btn btn-default @if({{$question->isRight}}) btn-success @endif pull-right"  data-toggle="modal"
                           id="falseBtn{{$question->id}}" onclick="addWrongRecord({{$question->id}})" >
-                         错误</button>
+                         错误
+                         </button>
                         <button type="button" class="btn btn-default pull-right" data-toggle="modal"
                          id="trueBtn{{$question->id}}" onclick="addRightRecord({{$question->id}})" >
                          正确</button>

@@ -63,7 +63,7 @@
                                 <img src="/img/nsts.gif" alt="a null start">
                             @endfor
                         </span>
-                    <span class="lead">&nbsp入库时间：{{$question->created_at}}</span>
+                    <span class="lead">&nbsp错误次数：{{$question->mistake_times}}</span>
                     <button id="button{{$question->id}}" onclick="changeQuestionState({{$question->id}})"
                             class="btn @if($question->isAdd) btn-danger @else btn-success @endif btn-style pull-right">
                         <span id="">@if($question->isAdd == 1) 移出收集箱 @else 加入收集箱 @endif</span>
@@ -83,7 +83,8 @@
                             aria-controls="answerButton">
                         答案</button>
                     <!--对错按钮-->
-                    <button type="button" class="btn btn-default pull-right"  data-toggle="modal"
+
+                    <button type="button" class="btn btn-default pull-right "  data-toggle="modal"
                             id="falseBtn{{$question->id}}" onclick="addWrongRecord({{$question->id}})" >
                         错误</button>
                     <button type="button" class="btn btn-default pull-right" data-toggle="modal"
@@ -92,6 +93,7 @@
                 </div>
                 <div class="collapse" id="answerButton{{$question->id}}">
                     {!! $question->answer !!}
+
                 </div>
             </div>
         @endforeach

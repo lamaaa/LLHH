@@ -118,14 +118,17 @@
                         <input type="checkbox" value="option4" id="part4"> <span class="lead">最热收集&nbsp&nbsp</span>
                     </label>
                     <label class="checkbox-inline pull-right">
-                        
                     </label>                                           
                 </div>  
             </div>
         </div>
     </div>
+
     </div>
-    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target=".bs-example-modal-lg">生成试卷</button>
+    <button type="button" class="btn btn-info " style="display:block" data-toggle="modal" data-target=".bs-example-modal-lg">生成试卷</button>
     @include('papers.doPaper')
+    <div class=""></div>
+
 </div><!--选择结束-->
+
 @endsection
