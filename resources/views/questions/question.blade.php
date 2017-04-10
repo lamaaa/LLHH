@@ -1,3 +1,5 @@
+
+@if(count($questions) > 0)
  @foreach($questions as $question)
         <div class="panel panel-default" >
             <div class="panel-heading">
@@ -43,3 +45,5 @@
 <!--引入做对模态框和做错模态框-->
 @include('chapters.rightModal')
 @include('chapters.wrongModal')
+@endif
+

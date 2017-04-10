@@ -25,20 +25,6 @@ class ChapterController extends Controller
         $this->chapterService = $chapterService;
     }
 
-    public function index(Request $request)
-    {
-        // 默认为显示第一章的问题
-        $chapter_id = 1;
-        $filter = $this->chapterService->getFilter($request);
-//        $sort = $this->chapterService->getSort($request);
-        $modules = $this->moduleRepository->all();
-        $questions = $this->chapterRepository->getQuestions($chapter_id, $filter);
-        $questions = $this->chapterService->paginate($request, $questions);
-
-        $active = 'chapters';
-        return view('chapters.show', compact(['modules', 'questions', 'chapter_id', 'active', 'filter', 'sort']));
-    }
-
     public function show(Request $request, $chapter_id)
     {
         $filter = $this->chapterService->getFilter($request);

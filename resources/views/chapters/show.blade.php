@@ -1,4 +1,4 @@
-@extends ('layouts.default')
+{{--@extends ('layouts.default')--}}
 
 @section('content')
 
@@ -30,6 +30,7 @@
             <nav class="navbar navbar-default pull-right" style="width:800px">
                 <div class="container">
                     <div id="navbar" class="navbar-collapse collapse">
+
                         <form class=" form-inline navbar-form" role="form" action="{{ route('chapters.show', $chapter_id) }}" id="screenForm" method="GET">
                             <ul class="nav navbar-nav from-group pull-left">
                                 <li class="from-group pull-left">
@@ -77,8 +78,6 @@
                 <div class="pull-right">
                      {!! $questions->render() !!}
                 </div>
-                @include('chapters.rightModal')
-                @include('chapters.wrongModal')
             </div>
         </div>
     </div>

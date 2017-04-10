@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav">
               <li @if($active == 'home') class="active" @endif><a href="{{url()}}">首页</a></li>
-              <li @if($active == 'chapters') class="active" @endif><a href="{{ route('chapters.show', 1) }}">题库</a></li>
+              <li @if($active == 'chapters') class="active" @endif><a href="{{ route('chapters.show', 501) }}">题库</a></li>
               <li @if($active == 'collections') class="active" @endif><a href="{{ route('collections.index') }}">收集箱</a></li>
               <li @if($active == 'papers') class="active" @endif><a href="{{ route('papers.index') }}">试卷</a></li>
               <li @if($active == 'about') class="active" @endif><a href="{{ route('about') }} " >关于</a>
@@ -27,8 +27,8 @@
                                 {{ Auth::user()->name }} <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('questions.wrong', Auth::user()->id)}}">我的错题</a></li>
-                                <li><a href="{{route('questions.done'), Auth::user()->id}}">做过的题</a></li>
+                                <li><a href="{{ route('questions.wrong') }}">我的错题</a></li>
+                                <li><a href="{{ route('questions.done') }}">做过的题</a></li>
                                 <li><a href="{{ route('user.show', Auth::user()->id) }}">个人中心</a></li>
                                 <li><a href="{{ route('user.edit', Auth::user()->id) }}">编辑资料</a></li>
                                 <li class="divider"></li>

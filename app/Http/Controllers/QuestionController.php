@@ -38,7 +38,7 @@ class QuestionController extends Controller
     {
         $filter = $this->questionService->getFilter($request);
         $sort = $this->questionService->getSort($request);
-        $questions = $this->questionRepository->getWrongQuestions();
+        $questions = $this->questionRepository->getWrongQuestions($filter, $sort);
         $questions = $this->questionService->paginate($request, $questions);
         $active = '';
 

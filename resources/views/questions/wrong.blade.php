@@ -7,10 +7,10 @@
         <nav class="navbar navbar-default" >
             <div class="container">
                 <div id="navbar" class="navbar-collapse collapse">
-                    <form class=" form-inline " role="form" action="{{ route('questions.done') }}" id="screenForm" method="GET">
+                    <form class=" form-inline " role="form" action="{{ route('questions.wrong') }}" id="screenForm" method="GET">
                         <li class="form-group">
                             <a  class="navbar-brand" style="margin-top:7px" href="javascript:void(0);"
-                                id="collected_at" onclick="sort(this.id)"><strong>排序：</strong>&nbsp&nbsp做错时间<span class="caret"></span></a>
+                                id="created_at" onclick="sort(this.id)"><strong>排序：</strong>&nbsp&nbsp入库时间<span class="caret"></span></a>
                         </li>
                         <li class="form-group">
 
@@ -30,22 +30,20 @@
 
                             <select name="difficulty" id="difficulty" class=" form-control  input"
                                     onchange="document.getElementById('screenForm').submit()" style="margin:15px 0px">
-                                <option value="4">难度</option>
-                                <option value="0" @if($filter['difficulty'] == 0) selected @endif>全部</option>
-                                <option value="1" @if($filter['difficulty'] == 1) selected @endif>容易</option>
-                                <option value="2" @if($filter['difficulty'] == 2) selected @endif>中等</option>
-                                <option value="3" @if($filter['difficulty'] == 3) selected @endif>困难</option>
+                                <option value="all" @if($filter['difficulty'] == 'all') selected @endif>难度</option>
+                                <option value="easy" @if($filter['difficulty'] == 'easy') selected @endif>容易</option>
+                                <option value="middle" @if($filter['difficulty'] == 'middle') selected @endif>中等</option>
+                                <option value="difficult" @if($filter['difficulty'] == 'difficult') selected @endif>困难</option>
                             </select>
                         </li>
                         <li class="form-group pull-right">
                             <!--<span  style="margin:15px 0px"><strong>题型：</strong></span>-->
                             <select name="type" id="type" class="form-control input "
                                     onchange="document.getElementById('screenForm').submit()" style="margin:15px 0px">
-                                <option value="4">题型</option>
-                                <option value="0" @if($filter['type'] == 0) selected @endif>全部</option>
-                                <option value="1" @if($filter['type'] == 1) selected @endif>选择题</option>
-                                <option value="2" @if($filter['type'] == 2) selected @endif>填空题</option>
-                                <option value="3" @if($filter['type'] == 3) selected @endif>计算题</option>
+                                <option value="all" @if($filter['type'] == 'all') selected @endif>题型</option>
+                                <option value="choice" @if($filter['type'] == 'choice') selected @endif>选择题</option>
+                                <option value="completion" @if($filter['type'] == 'completion') selected @endif>填空题</option>
+                                <option value="calculation" @if($filter['type'] == 'calculation') selected @endif>计算题</option>
                             </select>
                         </li>
                     </form>
@@ -53,7 +51,7 @@
             </div>
         </nav><!--结束导航栏-->
         <!--做题面板，头部显示难度系数，入库时间和收集箱按钮；内容框显示题目；尾部显示选项按钮和答案按钮-->
-        <div class=" pull-right"">
+        <div class="pull-right">
         @foreach($questions as $question)
             <div class="panel panel-default" >
                 <div class="panel-heading">
